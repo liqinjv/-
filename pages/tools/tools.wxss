@@ -1,0 +1,57 @@
+.k1{
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid rgb(240, 240, 240)
+}
+
+.jobname_title{
+  font-size:14px;
+  font-weight: 500
+}
+
+.jobname{
+  font-size:12px;
+  
+  
+}
+
+.bt{
+
+  width:70px;
+  height:30px;
+  background:#fff; 
+  font-size:12px;
+  line-height: 30px;
+
+  border-radius:50px;
+  position:fixed;
+  bottom:100rpx;
+  right: 10rpx;
+  border: 1px solid #ddd;
+  text-align: center;
+  
+
+}
+
+.nav-list{
+  display:flex;
+  flex-wrap:wrap;
+  padding:40rpx;
+  justify-content:space-between;
+
+}
+
+.margin-bottom{
+
+  margin-bottom: 80rpx
+}
+
+.weikaitong{
+  position: absolute;
+  
+  width:50px;
+  font-size:10px;
+  bottom:20rpx;
+  
+  
+}

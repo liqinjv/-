@@ -1,0 +1,37 @@
+/* pages/bible/bible.wxss */
+.border-top{
+  border-radius: 10px 10px 0 0 
+}
+
+.border-bottom{
+    border-radius: 0 0 10px 10px 
+
+}
+
+.padding-sm{
+  padding-top:10rpx;
+  padding-bottom:10rpx;
+  padding-left:15rpx;
+  padding-right:20rpx;
+  line-height: 70rpx;
+  
+
+  
+}
+.padding-sm2{
+  padding-top:0rpx;
+  padding-bottom:10rpx;
+  padding-left:15rpx;
+  padding-right:20rpx;
+  line-height: 70rpx;
+  
+
+  
+}
+
+.title{
+  border-radius: 8rpx;
+  padding:3px;
+  position: relative;
+  bottom:8px
+}

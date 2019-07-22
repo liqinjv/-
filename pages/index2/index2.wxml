@@ -1,0 +1,271 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed {{theme}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view style='width:100rpx' bindtap='liechang'>
+      <text class='icon-homefill text-white ' style='font-size:25px;padding-left:3vw'> </text>
+    </view>
+
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'>猎场</view>
+
+  </view>
+
+</view>
+
+<view  class='tcard' style=' transition: 2s; transform-style: preserve-3d; transform: rotateY({{cardjd}});'>
+  <!--正面-->
+  <view style='visibility:{{tcardzta}};transform: rotateY(180deg);' wx:if="{{if_!=1}}">
+
+    <view class="cu-bar bg-gray search  padding" style="top:0px;width:100%">
+      <view class='search-form round ' style='background:#fff;padding-:50px'>
+
+        <text wx:if="{{search_str.length>0}}" class="icon-repeal" style='font-size:16px' bindtap='repeal'> <text style='font-size:12px'> </text></text>
+        <text wx:else class="icon-search" style='font-size:16px' bindtap='search'></text>
+
+
+        <input type="text" placeholder="搜索关键字" confirm-type="search" bindinput='search_input' class='' bindconfirm="search" style='padding-left:10rpx' value='{{repeal}}'></input>
+        <!-- <text wx:if="{{search_str.length>0}}" class='icon-repeal' bindtap="repeal" style='font-size:16px;padding-right:10rpx'><text style='font-size:12px'>\t\t返回</text> </text> -->
+        <text wx:if="{{search_str.length>0}}" class='icon-search' bindtap="search" style='font-size:16px;'><text class='text-black' style='font-size:12px'>\t\t搜索　</text> </text>
+
+      </view>
+      <!-- <view style='width:100rpx' bindtap='refresh'> -->
+      <view style='width:100rpx' bindtap="cardfz" data-id="{{tcardsh}}">
+
+        <text class='icon-refresh text-orange ' style='font-size:20px;padding-left:32rpx;'> </text>
+        <text style='font-size:12px;padding-left:19rpx;'>刷一下</text>
+      </view>
+
+    </view>
+    <view class='top_position '></view>
+
+    <!-- 显示提示 -->
+    <view style='font-size:12px;text-align:center;padding-bottom:30rpx' class='text-grey' wx:if="{{is_search && search_data_list.length!=0}}">
+      <text class='icon-light text-yellow'>
+  <text decode='true' class='text-grey' >&nbsp;&nbsp;24猎\t-\t为您搜索到以下简历&nbsp;&nbsp;</text>
+      </text>
+    </view>
+
+    <view style='font-size:12px;text-align:center;padding-bottom:30rpx' class='text-grey' wx:if="{{is_search && search_data_list.length==0}}">
+      <text class='icon-creative text-yellow'></text>
+      <text decode='true' class='text-grey'>&nbsp;&nbsp;很遗憾,没有搜索到,试试别的关键词吧&nbsp;&nbsp;</text>
+
+    </view>
+
+
+
+    <view style='height:170rpx;background:#ccc; ' class='bg-white yinying ' wx:for="{{is_search?search_data_list:resume_list}}" wx:key>
+      <view class="flex  align-center bg-white" bindtap="details" data-resume_id='{{item.id}}' data-source_resume_id='{{item.source_resume_id}}' data-status='{{item.resume_status}}'>
+
+        <view wx:if="{{item.pic_url!=''&&item.pic_url!=null}}" class="cu-avatar xl round margin-left " style="background-image:url({{item.pic_url}});"></view>
+        <view wx:else class="cu-avatar xl round margin-left " style="background-image:url({{item.sex_id==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+        <view class="pd" style='height:170rpx'>
+          <view class='name1 text-black'>
+            <text>{{item.user_name}}\t\t</text>
+            <text style='margin-bottom:4rpx' wx:if="{{item.sex_id==1}}" class='icon-peoplefill text-blue'></text>
+            <text style='margin-bottom:4rpx' wx:else class='icon-peoplefill text-pink'></text>
+          </view>
+
+          <view class='sm_name text-grey'>
+            <text>{{item.age}}岁　</text>
+            <text>{{item.edu_background}}　</text>
+            <text>{{item.expected_salary=='0'?'面议':item.expected_salary}}</text>
+
+          </view>
+
+          <view class='sm_name text-grey smk_font_qiege'>
+            <text class=''>期望职位：{{item.position_content}}</text>
+          </view>
+
+          <view class='sm_name text-grey smk_font_qiege'>
+            <text>期望地点：{{item.place_content}}</text>
+          </view>
+
+
+        </view>
+
+      </view>
+
+
+
+    </view>
+
+
+
+
+
+
+
+
+    <!-- 加载提示 -->
+    <view class='text-center' wx:if="{{shouye_shangla}}">
+      <text wx:if="{{g_num>=15}}" class="icon-loading2 iconfont-spin" style='font-size:20px'></text>
+      <view class='text-center' wx:else>
+        <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>没有更多了-</text>
+
+      </view>
+    </view>
+
+    <!-- 搜索加载提示 -->
+    <view class='text-center' wx:if="{{search_shangla}}">
+      <text wx:if="{{search_g_num>=15}}" class="icon-loading2 iconfont-spin" style='font-size:20px'></text>
+      <view class='text-center' wx:else>
+        <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>没有更多了·</text>
+
+      </view>
+    </view>
+
+    <view class='text-center' wx:if="{{addpage_null}}">
+      <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>已经到底了</text>
+
+    </view>
+
+
+    <view class='cu-load load-modal' wx:if="{{jiazai}}">
+      <!-- <view class='icon-emojifill text-orange'></view> -->
+      <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+      <view class='gray-text text-grey'>正在加载..</view>
+    </view>
+
+
+    <view style='text-align:center' wx:if="{{list_null}}">
+      <view style='height:60px'></view>
+      <text class='icon-kong' style='font-size:100px;'></text>
+      <view style='height:30px'></view>
+      <view style='text-align:center;padding-bottom:30px;font-size:14px'>
+        <text class='text-grey'>没有更多了,刷新试试吧</text>
+      </view>
+
+
+    </view>
+
+
+
+    <!-- <view class='jianliku2 text-gray'>简历库</view> -->
+  </view>
+
+  <!-- 背面 -->
+  <view bindtap="cardfz" data-id="{{tcardsh}}" style='display:{{tcardztb}}' wx:else>
+    <view class="cu-bar bg-gray search  padding" style="top:0px;width:100%">
+      <view class='search-form round ' style='background:#fff;padding-:50px'>
+
+        <text wx:if="{{search_str.length>0}}" class="icon-repeal" style='font-size:16px' bindtap='repeal'> <text style='font-size:12px'> </text></text>
+        <text wx:else class="icon-search" style='font-size:16px' bindtap='search'></text>
+
+
+        <input type="text" placeholder="搜索关键字" confirm-type="search" bindinput='search_input' class='' bindconfirm="search" style='padding-left:10rpx' value='{{repeal}}'></input>
+        <!-- <text wx:if="{{search_str.length>0}}" class='icon-repeal' bindtap="repeal" style='font-size:16px;padding-right:10rpx'><text style='font-size:12px'>\t\t返回</text> </text> -->
+        <text wx:if="{{search_str.length>0}}" class='icon-search' bindtap="search" style='font-size:16px;'><text class='text-black' style='font-size:12px'>\t\t搜索　</text> </text>
+
+      </view>
+      <!-- <view style='width:100rpx' bindtap='refresh'> -->
+      <view style='width:100rpx' bindtap="cardfz" data-id="{{tcardsh}}">
+
+        <text class='icon-refresh text-orange ' style='font-size:20px;padding-left:32rpx;'> </text>
+        <text style='font-size:12px;padding-left:19rpx;'>刷一下</text>
+      </view>
+
+    </view>
+    <view class='top_position '></view>
+
+    <!-- 显示提示 -->
+    <view style='font-size:12px;text-align:center;padding-bottom:30rpx' class='text-grey' wx:if="{{is_search && search_data_list.length!=0}}">
+      <text class='icon-light text-yellow'>
+  <text decode='true' class='text-grey' >&nbsp;&nbsp;24猎\t-\t为您搜索到以下简历&nbsp;&nbsp;</text>
+      </text>
+    </view>
+
+    <view style='font-size:12px;text-align:center;padding-bottom:30rpx' class='text-grey' wx:if="{{is_search && search_data_list.length==0}}">
+      <text class='icon-creative text-yellow'></text>
+      <text decode='true' class='text-grey'>&nbsp;&nbsp;很遗憾,没有搜索到,试试别的关键词吧&nbsp;&nbsp;</text>
+
+    </view>
+
+
+
+    <view style='height:170rpx;background:#ccc; ' class='bg-white yinying ' wx:for="{{is_search?search_data_list:resume_list}}" wx:key>
+      <view class="flex  align-center bg-white" bindtap="details" data-resume_id='{{item.id}}' data-source_resume_id='{{item.source_resume_id}}' data-status='{{item.resume_status}}'>
+
+        <view wx:if="{{item.pic_url!=''&&item.pic_url!=null}}" class="cu-avatar xl round margin-left " style="background-image:url({{item.pic_url}});"></view>
+        <view wx:else class="cu-avatar xl round margin-left " style="background-image:url({{item.sex_id==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+        <view class="pd" style='height:170rpx'>
+          <view class='name1 text-black'>
+            <text>{{item.user_name}}\t\t</text>
+            <text style='margin-bottom:4rpx' wx:if="{{item.sex_id==1}}" class='icon-peoplefill text-blue'></text>
+            <text style='margin-bottom:4rpx' wx:else class='icon-peoplefill text-pink'></text>
+          </view>
+
+          <view class='sm_name text-grey'>
+            <text>{{item.age}}岁　</text>
+            <text>{{item.edu_background}}　</text>
+            <text>{{item.expected_salary=='0'?'面议':item.expected_salary}}</text>
+
+          </view>
+
+          <view class='sm_name text-grey smk_font_qiege'>
+            <text class=''>期望职位：{{item.position_content}}</text>
+          </view>
+
+          <view class='sm_name text-grey smk_font_qiege'>
+            <text>期望地点：{{item.place_content}}</text>
+          </view>
+
+
+        </view>
+
+      </view>
+
+
+
+    </view>
+
+
+
+
+
+
+
+
+    <!-- 加载提示 -->
+    <view class='text-center' wx:if="{{shouye_shangla}}">
+      <text wx:if="{{g_num>=15}}" class="icon-loading2 iconfont-spin" style='font-size:20px'></text>
+      <view class='text-center' wx:else>
+        <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>没有更多了-</text>
+
+      </view>
+    </view>
+
+    <!-- 搜索加载提示 -->
+    <view class='text-center' wx:if="{{search_shangla}}">
+      <text wx:if="{{search_g_num>=15}}" class="icon-loading2 iconfont-spin" style='font-size:20px'></text>
+      <view class='text-center' wx:else>
+        <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>没有更多了·</text>
+
+      </view>
+    </view>
+
+    <view class='text-center' wx:if="{{addpage_null}}">
+      <text class="text-grey" style='font-size:12px;padding-bottom:10rpx'>已经到底了</text>
+
+    </view>
+
+
+    <view class='cu-load load-modal' wx:if="{{jiazai}}">
+      <!-- <view class='icon-emojifill text-orange'></view> -->
+      <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+      <view class='gray-text text-grey'>正在加载..</view>
+    </view>
+
+
+    <view style='text-align:center' wx:if="{{list_null}}">
+      <view style='height:60px'></view>
+      <text class='icon-kong' style='font-size:100px;'></text>
+      <view style='height:30px'></view>
+      <view style='text-align:center;padding-bottom:30px;font-size:14px'>
+        <text class='text-grey'>没有更多了,刷新试试吧</text>
+      </view>
+
+
+    </view>
+
+  </view>
+
+
+</view>

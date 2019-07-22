@@ -1,0 +1,47 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;JD详情</text>
+
+  </view>
+</view>
+
+
+<view class='bg-white '>
+  <view style='text-align:center;font-size:13px' class='text-grey padding bg-gray' wx:if="{{jd_data.length>0}}">正在展示的JD</view>
+  <view style='text-align:center;font-size:13px' class='text-grey padding bg-gray' wx:else >暂无JD,赶快添加吧</view>
+
+  <view  class=" bg-gray flex justify-center padding  animation-reverse" wx:for="{{jd_data}}" wx:key   >
+    <text class='{{item.is_hide==0?"icon-attention":"icon-attentionforbid"}} yincang text-black' style='{{item.is_hide==0?"":"color:#444"}}'  bindtap='jd_hides' data-class="{{index}}" data-jd_id='{{item.id}} ' > <text style='font-size:12px;position:relative;bottom:5rpx'>{{item.is_hide==0?"下架":"上架"}}</text></text>
+    <text class='icon-close close text-white' bindtap='toggle' data-class="{{index}}" data-jd_id='{{item.id}}'></text>
+    <view  class='{{item.is_hide!=0?"bg-grey":"bg-white"}} jd padding' bindtap='jd_detail' data-jd_id="{{item.id}}">
+      <text class='padding text-black' style='font-size:13px;line-height:30px'> <text style='font-size:16px'class="{{item.is_hide==0?'text-black':'text-black'}}">{{item.jd_title}}</text> |  {{item.company__city__name}}\n</text>
+
+      <text class='padding {{item.is_hide==0?"text-orange":"text-white"}}  time2'style='font-size:16px'> {{item.salary}}元\n</text>
+      <text class='padding time2 text-grey'>{{item.position__name}}</text>
+      <text style='float:right;font-size:12px;'class='time {{item.is_hide==0?"text-white":"text-white"}}' >{{item.create_date}}</text>
+    </view>
+
+  </view>
+
+
+
+
+
+  <view class="flex padding align-center center justify-center bg-gray " bindtap='add_jd'>
+    <text class='icon-roundaddfill add text-red' ></text>
+    <text class='text-grey'>点击添加</text>
+  </view>
+
+  <view style='height:30px' class='bg-gray' ></view>
+
+</view>
+
+
+<!-- <button class='cu-btn bg-{{item.color}} animation-{{animation==item.name+"s"? item.name :""}} animation-reverse margin-sm basis-sm shadow' bindtap='toggle' data-class='{{item.name+"s"}}' wx:for="{{list}}">{{item.name}}</button> -->
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}"> 
+    <!-- <view class='icon-emojifill text-orange'></view> -->
+    <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text text-grey'>正在加载..</view>
+</view>

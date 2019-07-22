@@ -1,0 +1,231 @@
+<view class='cu-custom' style="height:{{CustomBar}}px">
+
+  <view class=" fixed {{theme}}" style="height:20vh;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px'>
+      <!-- <text class='icon-saoyisao padding1' style='font-size:18px'></text> -->
+    </view>
+
+
+  </view>
+</view>
+
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg" style='margin-top:1vh'>
+
+
+  <view class="cu-item " style='height:26vh;width:100%'>
+    <view class='title'>
+      <text style=' {{user_info.company_name.length>13?"font-size:14px ;font-weight:400":"font-weight:400"}}'>{{user_info.company_name}}</text>
+    </view>
+    <view class='title2'>
+      <text style='font-weight:200' class='text-grey'>{{user_info.company__industry__name}}/{{user_info.company__scale}}人</text>
+    </view>
+    <view class="cu-avatar xl round ava" style="background-image:url({{user_info.company__pic_url}});float:right"></view>
+
+
+    <!-- <view class='icon-write bianji text-grey' > <text style='font-size:10px'>编辑</text> </view> -->
+
+    <view class='title3'>
+
+      <text class='icon-vip text-red' style='font-size:14px'></text>
+
+      <text class='text-grey' style='font-size:12px;padding-right:80rpx' decode='true'>&nbsp;{{user_info.end_time}}</text>
+
+      <text class='icon-moneybag text-red' style='font-size:14px'></text>
+
+      <text class='text-grey' style='font-size:12px' decode='true'>&nbsp;{{user_info.sum_point}}</text>
+
+
+
+    </view>
+
+
+
+  </view>
+</view>
+
+
+
+
+
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg ">
+
+
+
+  <!-- <view class="cu-item arrow" bindtap='my_resume'>
+      <view class='content' >
+        <text class='icon-friendfavor text-orange'></text>
+        <text class='text-grey'>我的简历</text>
+      </view>
+    </view> -->
+
+  <view class="cu-item arrow">
+    <view class='content' bindtap='bg_color'>
+      <text class='icon-paint text-yellow'></text>
+      <text class='text-grey'>主题修改</text>
+    </view>
+  </view>
+
+  <!-- <view class="cu-item arrow" >
+      <view class='content' bindtap='js_encode'>
+        <text class='icon-form text-brown'></text>
+        <text class='text-grey'>优惠活动</text>
+      </view>
+    </view>
+
+     
+      <view class="cu-item arrow" >
+      <view class='content'>
+        <text class='icon-refund text-red'></text>
+        <text class='text-grey'>购买/续费</text>
+      </view>
+    </view> -->
+
+
+
+  <view class="cu-item arrow" bindtap='shouce'>
+    <view class='content'>
+      <text class='icon-read text-orange'></text>
+      <text class='text-grey'>使用手册</text>
+    </view>
+  </view>
+
+
+
+
+
+
+  <!-- <view class="cu-item arrow" bindtap='setting_email'>
+    <view class='content'>
+      <text class='icon-mail text-green'></text>
+      <text class='text-grey'>设置邮件模板</text>
+    </view>
+  </view> -->
+
+  <!-- <view class="cu-item arrow" bindtap='test'>
+        <view class='content'>
+          <text class='icon-service text-black'></text>
+          <text class='text-grey'>人才测评</text>
+        </view>
+    </view> -->
+
+
+
+  <view class="cu-item arrow" bindtap='setting_home'>
+    <view class='content'>
+      <text class='icon-settings text-orange'></text>
+      <text class='text-grey'>设置公司展示信息</text>
+    </view>
+  </view>
+
+
+
+  <view class="cu-item arrow" bindtap='chongzhi'>
+    <view class='content'>
+      <text class='icon-refresh text-blue'></text>
+      <text class='text-grey'>重置猎场人才模型</text>
+    </view>
+  </view>
+
+
+  <view class="cu-item arrow" bindtap='clearmodel'>
+    <view class='content'>
+      <text class='icon-footprint text-orange'></text>
+      <text class='text-grey'>退出登录</text>
+    </view>
+  </view>
+
+  <button class="cu-item arrow" style='text-align:left' open-type='feedback'>
+    <view class='content'>
+      <text class='icon-service text-cyan'></text>
+      <text class='text-grey'>用户反馈</text>
+    </view>
+  </button>
+
+
+  <!-- <form bindsubmit="send_template" report-submit='true'>
+    <button form-type="submit">Submit</button>
+
+  </form>
+
+ -->
+
+
+
+</view>
+
+
+
+
+<!-- 登录对话框 -->
+<view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+  <view class="cu-dialog center">
+
+    <view class='login_title'>登录/注册24猎</view>
+    <view class=' flex  justify-center'>
+      <button class='cu-btn block bg-green margin-tb-sm lg ' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        <text class='icon-weixin' style='margin-right:2px'></text>微信帐号快速登录
+        <text decode='true'>&nbsp;</text>
+      </button>
+    </view>
+
+    <view class=' flex  justify-center'>
+      <button class='cu-btn block bg-gray margin-tb-sms lg text-black'>
+        <text class='icon-shouji'></text>手机号注册/登录　</button>
+    </view>
+
+
+  </view>
+</view>
+
+
+
+
+<view class='box tab' wx:if="{{no_hr}}">
+  <view class="cu-bar tabbar bg-white">
+    <view class="action">
+      <view class='icon-cu-image'>
+        <image src='/imgs/tabbar/home.png'></image>
+      </view>
+      <view class='text-orange'>公司展示</view>
+    </view>
+
+    <view class="action" bindtap='user'>
+      <view class='icon-cu-image'>
+        <image src='/imgs/tabbar/user1.png'></image>
+      </view>
+      <view class='text-black'>我的</view>
+    </view>
+
+
+  </view>
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在加载..</view>
+</view>
+
+
+
+<view class="cu-modal show" wx:if="{{show_fandian}}">
+  <view class="cu-dialog">
+    <view class="cu-bar text-gray justify-end">
+      <view class='content text-black '>温馨提示</view>
+
+    </view>
+    <view class='padding-xl2 text-grey'>
+      已经为您返还
+      <text wx:if="{{appeal_point!=0}}">\n申诉简历点<text style='font-size:18px;font-weight:400;' class='text-red'> {{appeal_point}} </text> 点</text>
+      <text wx:if="{{fail_point!=0}}">\n失败简历点 <text style='font-size:18px;font-weight:400;' class='text-red'> {{fail_point}} </text>点</text>
+      <view style='margin-top:30rpx'>
+        <button class='cu-btn bg-green shadow padding ' style='width:200px;margin-bottom:10rpx' bindtap="showfd">我知道了</button>
+      </view>
+
+
+    </view>
+
+  </view>
+</view>

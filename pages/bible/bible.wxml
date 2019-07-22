@@ -1,0 +1,54 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <!-- <view class='content' style='top:{{StatusBar}}px;'>宝典</view> -->
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:18px' bindtap='back'></text> -->
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;职场宝典</text>
+
+  </view>
+</view>
+
+
+<view class=' padding ' style='text-align:center' wx:for="{{15}}" wx:key >
+
+  <text style='font-size:12px' class='bg-grey title'>2019-04-1{{index}} {{index}}:23</text>
+  <!-- 图片 -->
+  <view class="bg-img bg-mask padding-tb-xl border-top"  style="background-image: url('https://www.hr24.com.cn/static/images/xcx/haibao/1.jpg')" bindtap='nav_detail' data-url='https://mp.weixin.qq.com/s?__biz=MzUyMjkyODI4MQ==&mid=2247483920&idx=1&sn=6268184eab617226b0ccddb13229ab86&chksm=f9c52be6ceb2a2f0f066b4a49fab55b659868897a8fbcf1e7bcd9fb924631fe95f7a39ee1990&token=1840085302&lang=zh_CN#rd'>
+  <view class='padding-xl text-white'>
+    <view class='padding-xs text-xl'>
+      为中国企业加油！
+    </view>
+    <view class='padding-xs'>
+Cheer for Chinese enterprises!
+    </view>
+  </view>
+
+
+  </view>
+
+
+   <!-- 第一栏 -->
+
+  <view class='bg-white padding-sm' bindtap='nav_detail' data-url="https://www.hr24.com.cn/static/images/xcx/haibao/0.jpg">
+    <view class="flex solid-bottom padding-sm justify-between">
+      <view class='padding-sm  '>为中国企业加油！</view>
+      <view class="cu-avatar lg round margin-left" style="background-image:url(https://www.hr24.com.cn/static/images/xcx/haibao/0.jpg);"></view>
+    </view>
+  </view>
+
+
+  
+   <!-- 第2栏 -->
+
+  <view class='bg-white border-bottom padding-sm2' bindtap='nav_detail' data-url='https://www.hr24.com.cn/static/images/xcx/haibao/2.jpg' >
+    <view class="flex  padding-sm2 justify-between">
+      <view class='padding-sm  '>为中国企业加油！</view>
+      <view class="cu-avatar lg round margin-left" style="background-image:url(https://www.hr24.com.cn/static/images/xcx/haibao/2.jpg);"></view>
+    </view>
+  </view>
+
+
+
+
+
+
+</view>

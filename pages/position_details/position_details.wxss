@@ -1,0 +1,67 @@
+.sm_name{
+  font-size: 12px;
+  line-height: 20px
+}
+
+.m_name{
+  font-size: 14px
+}
+
+.bt{
+  border-bottom: 1px solid rgb(240, 240, 240)
+
+}
+
+
+.left{
+  padding-left: 30rpx
+  
+}
+
+
+.left2{
+  padding-left: 60rpx
+  
+}
+
+.center{
+  text-align: center
+}
+
+
+.height{
+  height: 6px;
+  background:rgb(245, 245, 245);
+}
+
+.title-color{
+  color:rgb(240, 240, 240)
+
+}
+
+.text_s{
+  font-size: 12px
+}
+
+.tabbar{
+  height: 50px;
+  width:100%;
+  
+  position:fixed;
+  bottom:0rpx;
+
+}
+
+.icon-back{
+  font-size:18px
+}
+
+.padding-sms{
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  padding-right: 20rpx;
+}
+
+.b1{
+  height: 30rpx
+}

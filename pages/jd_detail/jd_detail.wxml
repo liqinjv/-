@@ -1,0 +1,381 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;JD设置</text>
+
+  </view>
+</view>
+
+<view style='padding:0 10px 0 10px;background:white;height:84vh'>
+
+  
+ <view class="cu-form-group vh ">
+      <view class='title'>职位标题</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' value='{{old_jd_data.jd_title}}' maxlength="15" placeholder="如：销售总监" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formName'></input>
+    </view>
+
+       <!-- 招骋人数 -->
+     <view class="cu-form-group vh ">
+      <view class='title'>招骋人数</view>
+      <input  type='number' placeholder-style='font-size:12px;color:#c0c0c0'  maxlength="5" value='{{old_jd_data.amount}}' placeholder="如：50" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formNum'></input>人
+    </view>
+
+       <!-- 招骋人数 -->
+     <view class="cu-form-group vh ">
+      <view class='title'>招骋电话</view>
+      <input  type='number' placeholder-style='font-size:12px;color:#c0c0c0'  maxlength="11" value='{{old_jd_data.jd_phone}}' placeholder="填写手机号码" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='jd_phone'></input>
+    </view>
+
+
+           <!-- 招骋人数 -->
+     <view class="cu-form-group vh solid-bottom ">
+      <view class='title'>岗位月薪</view>
+      <input type='number' placeholder-style='font-size:12px;color:#c0c0c0' maxlength="6" value='{{money==0?"":money}}' placeholder="如：8000" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formmoney'></input>元
+      <view class='' style='padding-left:20rpx;position:relative;left:30rpx'>—</view>
+
+      <input type='number' placeholder-style='font-size:12px;color:#c0c0c0' maxlength="6" value='{{money2==0?"":money2}}' placeholder="如：9000" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formmoney2'></input>元
+      
+      
+    </view>
+
+
+
+
+    <!-- 职位月薪
+  <view class="cu-bar bg-white solid-bottom  vh" >
+    <view class='action text-black'>
+      <text ></text>职位月薪
+    </view>
+
+    <view class="flex   justify-end">
+        <view class="flex  padding align-center">
+          <picker bindchange="PickerChange" value="{{money_index}}" range="{{money}}">
+            <view class="picker">
+              {{money[money_index]}}　
+              
+            </view>
+          </picker>
+          <text class='icon-right'></text>v
+        </view>
+      </view>
+  </view> -->
+
+
+
+    <!-- 要求学历 -->
+  <view class="cu-bar bg-white solid-bottom border-bottom vh" >
+    <view class='action text-black'>
+      <text ></text>要求学历
+    </view>
+
+    <view class="flex   justify-end">
+        <view class="flex  padding align-center">
+          <picker bindchange="eduChange" value="{{age_index}}" range="{{age}}">
+            <view class="picker">
+              {{age[age_index]}}　
+            </view>
+          </picker>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+
+
+    <!-- 职位工作经验 -->
+  <view class="cu-bar bg-white solid-bottom border-bottom vh" >
+    <view class='action text-black'>
+      <text ></text>工作经验
+    </view>
+
+    <view class="flex   justify-end">
+        <view class="flex  padding align-center">
+          <picker bindchange="expChange" value="{{work_exp_index}}" range="{{work_exp}}">
+            <view class="picker">
+              {{work_exp[work_exp_index]}}　
+            </view>
+          </picker>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+
+          <!-- 招骋人数 -->
+     <!-- <view class="cu-form-group vh solid-bottom ">
+      <view class='title'>工作经验</view>
+      <input type='number' placeholder-style='font-size:12px;color:#c0c0c0' placeholder="1" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formmoney'></input>-
+      <input type='number' placeholder-style='font-size:12px;color:#c0c0c0;width:10px' style='width:10px' placeholder="3" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formmoney'></input>年
+    </view> -->
+
+
+
+
+
+
+ 
+
+
+  <view class="cu-bar bg-white solid-bottom border-bottom vh" >
+    <view class='action text-black'>
+      <text  ></text>职位类别
+    </view>
+
+    <view class="flex   justify-end">
+        <view class="flex  padding align-center" >
+          <text wx:if="{{checkbox_name_1==false}}" bindtap="showModal" data-target="DrawerModalL">请选择　</text>
+          <text wx:if="{{checkbox_name_1}}" bindtap="showModal" data-target="DrawerModalL">{{checkbox_name_1}}...　</text>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+
+
+  <!-- <view class="cu-bar bg-white  border-bottom vh" >
+    <view class='action text-black'>
+      <text ></text>行业类别
+    </view>
+
+     <view class="flex   justify-end">
+        <view class="flex  padding align-center" >
+          <text wx:if="{{checkbox_name_1_s==false}}" bindtap="showModal_s" data-target="DrawerModalL">请选择　</text>
+          <text wx:if="{{checkbox_name_1_s}}" bindtap="showModal_s" data-target="DrawerModalL">{{checkbox_name_1_s}}...　</text>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+   -->
+
+
+   <view class="cu-bar bg-white  border-bottom vh"  bindtap='job_detail'>
+    <view class='action text-black'>
+      <text ></text>职位描述
+    </view>
+
+     <view class="flex border-bottom  justify-end">
+        <view class="flex  padding align-center" >
+          <text  >{{position_data_sm}}　</text>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+
+
+   <view class="cu-bar bg-white  border-bottom vh"  bindtap='job_welfare'>
+    <view class='action text-black'>
+      <text ></text>职位诱惑
+    </view>
+
+     <view class="flex border-bottom  justify-end">
+        <view class="flex  padding align-center" >
+          <text  >{{position_welfare_sm}}　</text>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view>
+
+
+
+
+
+
+  
+   <!-- <view class="cu-bar bg-white  border-bottom vh"  bindtap='company_introduction'>
+    <view class='action text-black'>
+      <text ></text>公司介绍
+    </view>
+
+     <view class="flex border-bottom  justify-end">
+        <view class="flex  padding align-center" >
+          <text >请选择　</text>
+          <text class='icon-right'></text>
+        </view>
+      </view>
+  </view> -->
+
+
+ 
+
+    
+
+
+
+</view>
+
+
+
+
+
+
+
+<view>
+<button class="cu-btn  bg-gradual-orange  lg button-hover bottom " style='padding:0' role="button"aria-label=""aria-disabled="false" bindtap='{{is_update?"save_update":"save"}}'>
+<text class="icon-loading2 iconfont-spin" wx:if="{{is_save}}"></text>
+点击保存
+</button>
+</view>
+
+
+<!-- 职位选择器 -->
+<view class="cu-modal drawer-modal justify-start {{modalName=='DrawerModalL'?'show':''}}" bindtap='hideModal'  >
+  <view class="cu-dialog basis-lg ding" catchtap style="top:{{CustomBar*2.5}}px;border-radius:0px 20px 40px 6px" scroll-y='true' >
+    <view style='text-align:center;font-size:16px' class='text-black ' >职业类别</view>
+    <text style='float:right;position:fixed;right:18px;top:10px' class='cu-tag round bg-orange' bindtap='hideModal'>保存</text>
+    <view wx:if="{{is_select}}" style='font-size:12px;padding:10px 0 0 0 ' class=' '>已选\t\t(点击可删除)：
+        <view style='width:100%;heigth:auto;padding:0 0 0rpx 20rpx ' class='grid   text-center'>
+            
+            <view style='margin-top:5rpx'   >
+              <view class='cu-tag bg-orange round' bindtap='cancel_checkbox' data-id='0' data-code="{{checkbox_code_1}}">{{checkbox_name_1}} </view>
+                <!-- <view class='cu-tag bg-orange round' bindtap='cancel_checkbox' data-id='0' data-code="{{checkbox_code_1}}">{{checkbox_name_1 }} </view> -->
+                <!-- <text class='icon-roundclosefill' style='position:relative;right:5px;bottom:8px' ></text> -->
+            </view>
+          
+        </view>
+        
+    </view>
+    
+
+
+
+
+    <view style='padding: 15px 0;' class='' >
+    
+    <text style='font-size:12px;color:#000' bindtap='set_one_class_index' decode="{{true}}" class="margin-right {{one_click==1?'text-black boder-bottom':''}}">{{one_class_name}}</text>
+    
+    <text style='font-size:12px;color:#000' bindtap='set_two_class_index' decode="{{true}}" class="margin-right {{one_click==2?'text-black boder-bottom':''}}">{{two_class_name}}</text>
+      <text style='font-size:12px;color:#000' class="{{one_click==3?'text-black boder-bottom':''}}">{{three_class_name}}</text>
+    </view>    
+    
+    <scroll-view scroll-y='true' style='height:70vh;padding:0 0 50px 0'>
+
+      <!-- 点击一级类，隐藏其他类 -->
+      <view wx:for="{{job_name_json}}" wx:key class='text-grey' style='' wx:if="{{one_click==1}}">  
+
+        <text  style='line-height:60rpx;color:#636363' class='text-black smail_txt' bindtap='one_class' data-class_name='{{job_name_json[index][0].name}}' data-class_index="{{index}}">{{job_name_json[index][0].name}}</text>
+        <!-- <text style='line-height:60rpx;font-size:18px;padding:0 15px 0 0;color:#708090' class='icon-square right text-grey '></text> -->
+        
+      
+      </view>
+
+      <!-- 点击二级类，隐藏其他类 -->
+      <view wx:for="{{job_name_json[one_class_index]}}" wx:key class='text-grey' style='' wx:if="{{one_click==2}}">  
+
+      <text wx:if="{{index!=0}}" style='line-height:60rpx;color:#636363' class='text-black smail_txt' bindtap='two_class' data-class_name='{{job_name_json[one_class_index][index][0].name}}' data-class_index="{{index}}">{{job_name_json[one_class_index][index][0].name}}</text>
+      
+      <!-- <text wx:if="{{index!=0}}" style='line-height:60rpx;font-size:18px;padding:0 0px 0 0;color:#708090' id='{{job_name_json[one_class_index][index][0].code}}' class=' right text-grey  ' bindtap='select_checkbox' data-id="{{job_name_json[one_class_index][index][0].code}}" ></text> -->
+      <!-- <text class='{{select_list.indexOf("1")==0?"bg-orange":"bg-red"}}'>12{{select_list.indexOf("1")}}1</text> -->
+
+        <!-- <checkbox class='right orange ' wx:if="{{index!=0}}" style='padding-top:10rpx;margin:0' bindtap='select_checkbox' data-checkbox_dict='{{job_name_json[one_class_index][index][0]}}'  checked=''></checkbox> -->
+
+      <text wx:if="{{index!=0}}" style='line-height:60rpx;font-size:18px;padding:0 0px 0 0;color:#708090' class='{{job_name_json[one_class_index][index][0].code==checkbox_code_1?"icon-squarecheck":job_name_json[one_class_index][index][0].code==checkbox_code_2?"icon-squarecheck":job_name_json[one_class_index][index][0].code==checkbox_code_3?"icon-squarecheck":"icon-square"}}  right text-grey ' bindtap='select_checkbox' data-checkbox_dict='{{job_name_json[one_class_index][index][0]}}'></text>
+      
+      <!-- <checkbox class='right orange ' wx:if="{{job_name_json[one_class_index][index][0].code}}" style='padding-top:10rpx;margin:0' bindtap='select_checkbox' data-checkbox_dict='{{job_name_json[one_class_index][index][0]}}'  checked=''></checkbox> -->
+      
+    
+    </view>
+    
+      <!-- 点击三级类，隐藏其他类 -->
+      <view wx:for="{{job_name_json[one_class_index][two_class_index]}}" wx:key class='text-grey' style='' wx:if="{{one_click==3}}">  
+
+        <text wx:if="{{index!=0}}" style='line-height:60rpx;color:#636363' class='text-black smail_txt' bindtap='three_class' data-class_name='{{job_name_json[one_class_index][two_class_index][index].name}}' data-class_index="{{index}}">{{job_name_json[one_class_index][two_class_index][index].name}}</text>
+        <text wx:if="{{index!=0}}" style='line-height:60rpx;font-size:18px;padding:0 0px 0 0;color:#708090' class='{{job_name_json[one_class_index][two_class_index][index].code==checkbox_code_1?"icon-squarecheck":job_name_json[one_class_index][two_class_index][index].code==checkbox_code_2?"icon-squarecheck":job_name_json[one_class_index][two_class_index][index].code==checkbox_code_3?"icon-squarecheck":"icon-square"}}  right text-grey 'bindtap='select_checkbox' data-checkbox_dict='{{job_name_json[one_class_index][two_class_index][index]}}'></text>
+        
+          <!-- <checkbox class='right  orange' wx:if="{{index!=0}}" style='padding-top:10rpx' bindtap='select_checkbox' data-checkbox_dict='{{job_name_json[one_class_index][two_class_index][index]}}'   ></checkbox> -->
+
+        
+      </view>
+
+    
+      <view style='height:20px'></view>
+    </scroll-view>
+
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 行业选择器 -->
+<view class="cu-modal drawer-modal justify-start {{modalName_s=='DrawerModalL'?'show':''}}" bindtap='hideModal_s'  >
+  <view class="cu-dialog basis-lg ding" catchtap style="top:{{CustomBar*2.5}}px;border-radius:0px 20px 40px 6px" scroll-y='true' >
+    <view style='text-align:center;font-size:16px' class='text-black ' >行业类别</view>
+    <text style='float:right;position:fixed;right:18px;top:10px' class='cu-tag round bg-orange' bindtap='hideModal_s'>保存</text>
+    <view wx:if="{{is_select_s}}" style='font-size:12px;padding:10px 0 0 0 ' class=' '>已选：
+        <view style='width:100%;heigth:auto;padding:0 0 0rpx 20rpx ' class='grid col-2  text-center'>
+            
+            <view style='margin-top:5rpx' wx:if="{{checkbox_name_1_s}}"  >
+              <view class='cu-tag bg-orange round' bindtap='cancel_checkbox_s' data-id='0' data-code="{{checkbox_code_1_s}}">{{checkbox_name_1_s }} </view>
+                
+            </view>
+            <view style='margin-top:5rpx' wx:if="{{checkbox_name_2_s}}"  >
+                <view class='cu-tag bg-orange round' bindtap='cancel_checkbox_s'  data-id='1' data-code="{{checkbox_code_2_s}}">{{checkbox_name_2_s }} </view>
+            </view>
+             <view style='margin-top:5rpx' wx:if="{{checkbox_name_3_s}}"  >
+                <view class='cu-tag bg-orange round' bindtap='cancel_checkbox_s'  data-id='2' data-code="{{checkbox_code_3_s}}">{{checkbox_name_3_s }}</view>
+            </view>
+           
+        </view>
+        
+    </view>
+    
+
+
+
+
+    <view style='padding: 15px 0;' class='' >
+    
+    <text style='font-size:12px;color:#000' bindtap='set_one_class_index_s' decode="{{true}}" class="margin-right {{one_click_s==1?'text-black boder-bottom':''}}">{{one_class_name_s}}</text>
+    
+    <text style='font-size:12px;color:#000' bindtap='set_two_class_index_s' decode="{{true}}" class="margin-right {{one_click_s==2?'text-black boder-bottom':''}}">{{two_class_name_s}}</text>
+      <!-- <text style='font-size:12px;color:#000' class="{{one_click_s==3?'text-black boder-bottom':''}}">{{three_class_name_s}}</text> -->
+    </view>    
+    
+    <scroll-view scroll-y='true' style='height:70vh;padding:0 0 50px 0'>
+
+      <!-- 点击一级类，隐藏其他类 -->
+      <view wx:for="{{industry_list}}" wx:key class='text-grey' style='' wx:if="{{one_click_s==1}}">  
+
+        <text  style='line-height:60rpx;color:#636363' class='text-black smail_txt' bindtap='one_class_s' data-class_name='{{industry_list[index][0].name}}' data-class_index="{{index}}">{{industry_list[index][0].name}}</text>
+        
+      
+      </view>
+
+      <!-- 点击二级类，隐藏其他类 -->
+      <view wx:for="{{industry_list[one_class_index_s]}}" wx:key class='text-grey' style='' wx:if="{{one_click_s==2}}">  
+
+      <text wx:if="{{index!=0}}" style='line-height:60rpx;color:#636363' class='text-black smail_txt' bindtap='two_class_s' data-class_name='{{industry_list[one_class_index_s][index][0].name}}' data-class_index="{{index}}">{{industry_list[one_class_index_s][index].name}}</text>
+      
+      
+
+      <text wx:if="{{index!=0}}" style='line-height:60rpx;font-size:18px;padding:0 0px 0 0;color:#708090' class='{{industry_list[one_class_index_s][index].code==checkbox_code_1_s?"icon-squarecheck":industry_list[one_class_index_s][index].code==checkbox_code_2_s?"icon-squarecheck":industry_list[one_class_index][index].code==checkbox_code_3_s?"icon-squarecheck":"icon-square"}}  right text-grey ' bindtap='select_checkbox_s' data-checkbox_dict='{{industry_list[one_class_index_s][index]}}'></text>
+ 
+    
+    </view>
+    
+   
+
+    
+      <view style='height:20px'></view>
+    </scroll-view>
+
+  </view>
+
+
+</view>
+<view wx:if="{{is_complete}}" style='color:red;text-align:center;font-size:12px'><text>*信息填写不完整</text></view>
+
+
+
+

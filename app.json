@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/phone_login/phone_login",
+    "pages/setting_home/setting_home",
+    "pages/hangye/hangye",
+    "pages/resume/resume",
+    "pages/shensu/shensu",
+    "pages/old_index/old_index",
+    "pages/home/home",
+    "pages/privacy_agreement/privacy_agreement",
+    "pages/use_agreement/use_agreement",
+    "pages/user/user",
+    "pages/my_resume/my_resume",
+    "pages/job_detail/job_detail",
+    "pages/welfare/welfare",
+    "pages/index/index",
+    "pages/index2/index2",
+    "pages/bg_color/bg_color",
+    "pages/resume_details/resume_details",
+    "pages/init2/init2",
+    "pages/init4/init4",
+    "pages/share/share",
+    "pages/bible_detail/bible_detail",
+    "pages/list/list",
+    "pages/test/test",
+    "pages/jd_detail/jd_detail",
+    "pages/liechang/liechang",
+    "pages/manage_resume/manage_resume",
+    "pages/jd_setting/jd_setting",
+    "pages/bible/bible",
+    "pages/position_details/position_details",
+    "pages/position_details_ss/position_details_ss",
+    "pages/tools/tools",
+    "pages/job/job",
+    "pages/get_two_code/get_two_code",
+    "pages/generate _poster/generate _poster",
+    "pages/setting_email/setting_email",
+    "pages/search/search",
+    "pages/setting/setting"
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#a5a5a5",
+    "selectedColor": "#ff8f00",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "imgs/tabbar/home1.png",
+        "selectedIconPath": "imgs/tabbar/home.png",
+        "text": "公司展示"
+      },
+      {
+        "pagePath": "pages/tools/tools",
+        "iconPath": "imgs/tabbar/tool1.png",
+        "selectedIconPath": "imgs/tabbar/tool.png",
+        "text": "招骋工具"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/tabbar/index1.png",
+        "selectedIconPath": "imgs/tabbar/index.png",
+        "text": "猎场"
+      },
+      {
+        "pagePath": "pages/share/share",
+        "iconPath": "imgs/tabbar/fenxiang1.png",
+        "selectedIconPath": "imgs/tabbar/fenxiang.png",
+        "text": "推广互动"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "imgs/tabbar/user1.png",
+        "selectedIconPath": "imgs/tabbar/user.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx9f8f279fdef09398"
+  ]
+}

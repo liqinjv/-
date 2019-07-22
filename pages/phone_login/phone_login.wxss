@@ -1,0 +1,173 @@
+page{ 
+ height: 100%; 
+ 
+} 
+  
+.container { 
+ height: 100%; 
+ display: flex; 
+ flex-direction: column; 
+ padding: 0; 
+ box-sizing: border-box; 
+ background-color: #f2f2f2
+} 
+  
+/*登录图片*/
+.login-icon{ 
+ flex: none; 
+ text-align: center;
+ background:#fff;
+ margin-top:50rpx;
+ margin-bottom:50rpx
+} 
+.login-img{ 
+ width: 260rpx; 
+ height: 110rpx;
+ margin-bottom: 10rpx
+
+} 
+  
+/*表单内容*/
+.login-from { 
+ margin-top: 20px; 
+ flex: auto; 
+ height:100%; 
+ background: #fff
+} 
+  
+.inputView { 
+ background-color: #ffffff; 
+ line-height: 44px; 
+
+
+
+} 
+/*输入框*/
+.nameImage{
+ float: left;
+ width: 30rpx; 
+ height: 30rpx;
+ margin-left: 30%;
+margin-right: 3%;
+margin-top: 1.5%
+}
+ .keyImage { 
+   margin-top: 1.5%;
+ width: 30rpx; 
+ height: 30rpx; 
+ float: left;
+  margin-left: 30%;
+  margin-right: 3%;
+
+
+
+ 
+  
+
+} 
+  
+.loginLab { 
+ margin: 15px 15px 15px 10px; 
+ color: #000000; 
+ font-size: 14px
+} 
+
+
+
+  
+.line { 
+ width: 100%; 
+ height: 1px; 
+ background-color: #cccccc; 
+ margin-top: 1px; 
+} 
+/*按钮*/
+.loginBtnView { 
+ width: 100%; 
+ 
+ margin-top: 0px; 
+ margin-bottom: 0px; 
+ padding-bottom: 0px; 
+
+} 
+  
+.loginBtn { 
+ width: 50%; 
+ height: 35px;
+ line-height: 35px;
+ font-size: 16px;
+
+ margin-top: 35%; 
+ background-color: #ff8f00; 
+ color: #fff;
+
+ }
+
+ .kefu {
+   margin-top: 3%;
+   width: 50%; 
+  height: 35px;
+  line-height: 35px;
+  background-color: #ffffff; 
+  border: 1px solid #73b666;
+  color: #73b666;
+  font-size: 16px;
+   
+ }
+
+
+  .qt{
+    
+    border-bottom: 1px solid #ccc;
+    width: 60vw;
+    margin-left: 20vw;
+    margin-top:1vh
+ 
+  }
+
+
+ .qita{
+   font-size: 12px;
+   color: rgb(112, 112, 112);
+   text-align: center;
+   margin-top: 150rpx;
+
+
+ }
+ .wx_logo{
+   margin-top: 3vh;
+    width: 80rpx; 
+    height: 80rpx;
+    margin-bottom: 10rpx
+
+ }
+ input{
+   width:30%;
+
+ }
+
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1554198353958'); /* IE9 */
+  src: url('iconfont.eot?t=1554198353958#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOkAAsAAAAAB4gAAANVAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCbIJOATYCJAMMCwgABCAFhG0HORuXBsg+QTZkQ3yviKlS9miTHDLwSDvG7M3s3no7H378a+Phv7Fv983MV08rjnn1hCfOJhJnExI1JLFGI1VK0S4aPbGXulJ+INQjUHW4pgN5ZD1DiLliqJKiS4XHzvpe8KIokqj20WgE000nOLPPvGsAGS0wDQC4eA4mcvMEuXkEB3qC+vo3AOt1uWJDL4m+EvT+n8vprcTntyyXOZYf9QKMAwpsjEFrCRdIot4wduVFbCbQNC8Vd6a+tRc5KYxegbguCTrklNIrNaWhLlRLJhbxHHH19IC8Ac/878cPDCeSSmYMvLxVZ0SVn2tPBa0uggTjWcGmkbEHUoirpfZNtmF8D1tNRW5Xn1tVhDRWCACfr/7hVVWRBFFlFLfBDihLJyWwWSS+THjWTTKoghW5BXmBKePXVZWBi8vM2blv51zuf3u7fHk9fX0zb3ieMPe/f7ftPj9/wXXDPXe2L3T3b4hr0rJ34NZT19LL+N5CstbfP3Kh97TOI2efdLv5hIlDb56/80fKw5/WFTXvnn48/2TDo7mHA272nROcXb5+adsEN4/PXjZmk+PuP8+FNJ3W5gZvDtQKm4QPZ8JqPfxYGLuMords/w2HkJePTm4veSNdROXseG1GzPWZCof7ceBkQhq/eKz8mv9Y0miyo9O/Vf7fhZBjmPxzb67PqdSpb+6xAn5bWE7/H7o8OcfgEh/sN4TthbwMk3KF7cz/+Y3OZeuQxrP0r6KA99Uu6N1WULtCpC7RWvA3BC0riioyDLnIfJuvp7KLHO6VC7lc4R+Uw9DP/urJHSdD3SSGpGYOsrpVtFD2QEXLEaiqOw5NuzVMbxmhbEVpYJdlAKHvCiRdryDre4sWyg+omPoFVf2whaYr4btgy3pILjUUdAyMWD+OJQOx8paJuQSl3SAMm3U0KfKp/UBVKYSz9h3IphrACnSMIeqIkM0Yj3lKLLgebAdmM8EKJTIYWLrImFKcsX+r7EbpBmJBLk6jgA4DjDC9cZjEgLDi3dqMS+7z3YBgmJkOrSFV2PsBSiU1jmVJl9kCbZBbW5Gu5RDVCEE2huFhPIqwwOpBO2BmRmBKeTsZMGDSiT2iimIZZjW+rTx9fqXl+dZBk7FyjhQ5iuptkMYkq4MqkmFZQggAAAA=') format('woff2'),
+  url('iconfont.woff?t=1554198353958') format('woff'),
+  url('iconfont.ttf?t=1554198353958') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1554198353958#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before {
+  content: "\e7e5";
+}
+
+.icon-shouji:before {
+  content: "\e607";
+}

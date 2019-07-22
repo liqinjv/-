@@ -1,0 +1,31 @@
+/* pages/generate _poster/generate _poster.wxss */
+savebtn-style{
+  background: #000
+}
+
+
+.canvas-style{
+  width: 650rpx !important;
+  height: 1050rpx  !important;
+  margin: 0 auto;
+  /* border: 1px solid orangered; */
+  margin-top: 0rpx;
+}
+
+.ps{
+  position: fixed;
+  bottom:150rpx
+}
+.savebtn-style{
+     background: #000;
+
+  height: 135px;line-height: 135px;
+ 
+
+
+
+}
+
+.clickbtn{
+  height:10px
+}

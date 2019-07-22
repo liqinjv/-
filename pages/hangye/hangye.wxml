@@ -1,0 +1,14 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;选择行业分类</text>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+<!-- <button wx:for='{{hangye_key}}' style='margin-right:10rpx;margin-bottom:10rpx' class='cu-btn round sm'>{{hangye_key[index]}}</button>  -->
+<view class='' style='text-align:center;padding:30rpx'>
+
+  <button wx:for='{{hangye_key}}' bindtap='bt' wx:key data-index='{{index}}' style='margin-right:15rpx;margin-bottom:20rpx;width:45%;padding:20rpx' class='cu-btn  {{s==index?"bg-orange":"bg-gray"}} round '>{{hangye_key[index]}}</button>
+
+</view>

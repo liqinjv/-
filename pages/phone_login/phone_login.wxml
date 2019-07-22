@@ -1,0 +1,58 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;</text> -->
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+
+<view class="container" style='background:#fff'> 
+ <view class="login-icon" > 
+ <image class="login-img" src="/imgs/init/logo_black1.png" ></image> 
+ </view> 
+ <view class="login-from"> 
+  
+ <!--账号-->
+ <view class="inputView"> 
+  <image class="nameImage" src="/imgs/user/user.png" ></image> 
+  <input class="inputText1" placeholder="　请输入手机号" bindinput="phoneInput"  style=' font-size: 12px;border-bottom:1px solid #ccc'/> 
+ </view> 
+
+  
+ <!--密码-->
+ <view class="inputView" style='padding:10px 0 0 0 '> 
+  <image class="keyImage" src="/imgs/user/key.png"></image> 
+  <input class="inputText2" password="true" placeholder="　请输入密码" bindinput="passwordInput" style=' font-size: 12px;border-bottom:1px solid #ccc' /> 
+ </view> 
+  
+ <!--按钮-->
+ <view class="loginBtnView"> 
+  <button class="loginBtn"   bindtap="{{check_?'':'show_tishi'}}" open-type="{{check_?'getUserInfo':''}}" bindgetuserinfo="bindGetUserInfo"  >  登　录</button> 
+ </view> 
+
+
+  <view>
+  <button wx:if="{{check_}}" class='kefu bg-green' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"> <text class='icon-weixin'></text> 微信快速登录</button>
+  <button wx:else class='kefu bg-green' bindtap='show_tishi'> <text class='icon-weixin'></text> 微信快速登录</button>
+  
+  </view>
+
+  <view style='font-size:12px;padding:50rpx;text-align:center'>
+    <text class='{{check_?"icon-squarecheck":"icon-square"}} ' style='font-size:15px' bindtap='check_'></text>
+    <text bindtap='check_'>\t我已经同意</text>
+
+    <text class='text-green' bindtap='sy'>《24猎使用协议》</text> 和
+    <text class='text-green' bindtap='ys'>《24猎隐私权条款》</text> 
+  </view>
+
+
+ </view> 
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}"> 
+    <!-- <view class='icon-emojifill text-orange'></view> -->
+    <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text text-grey'>正在登录...</view>
+</view>

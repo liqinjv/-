@@ -1,0 +1,4 @@
+.padding-xl {
+  padding: 70rpx;
+  font-size:16px
+}

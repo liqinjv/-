@@ -1,0 +1,48 @@
+.mtop{
+  margin-top: 10px
+
+}
+
+.border-bottom{
+  border-bottom:0.3px solid rgb(245, 245, 245)
+
+}
+
+.placeholderStyle{
+  
+  font-size: 12px;
+  text-align: right;
+}
+
+.vh{
+  height:8vh
+}
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 100%;
+   padding:0;
+   margin-right:10px
+ 
+
+}
+
+.picker{
+  font-size: 13px;
+  color: #3d3d3d
+}
+
+.sm_massage{
+  position: fixed;
+  top:60vh;
+  right: 60rpx;
+  
+}
+
+.text_position{
+  width:90%;
+  margin-left: 5%;
+  margin-top:5%
+
+}

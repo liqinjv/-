@@ -1,0 +1,173 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:18px' bindtap='back'></text> -->
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;简历详情</text>
+
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+<!-- 简历申诉 -->
+<!-- <text wx:if="{{status==2 && referer==1}}" bindtap='The_complaint' data-resume_id='{{resume_id}}' class='icon-shensudingdan shensu text-red'> </text> -->
+<text wx:if="{{isOrd==0&&status==2}}" bindtap='The_complaint' data-resume_id='{{resume_id}}' class='icon-shensudingdan shensu text-red'> </text>
+
+
+
+<view class='bg-gray'>
+  <view style='height:30rpx'></view>
+  <view class='center'>
+    <view wx:if="{{resume.pic_url}}" class="cu-avatar xl round " style="background-image:url({{resume.pic_url}});"></view>
+    <view wx:else class="cu-avatar xl round " style="background-image:url({{resume.sex_id==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+
+    <view class='padding'>
+      <text style='font-size:20px; font-weight:400'>{{resume.user_name}}</text>
+    </view>
+    <view>
+      <text style='font-size:14px' class='text-blue'>{{resume.sex_id==1?"男":"女"}} | {{resume.age}}岁 | {{resume.edu_background}} | {{resume.expected_salary=='0'?'面议':resume.expected_salary}}</text>
+    </view>
+  </view>
+
+  <view class='padding'>
+
+    <!-- 手机号邮箱 -->
+    <view class='k1 bg-white' wx:if="{{status==2 && referer==1}}">
+
+
+      <view class='icon-phone t1 padding3 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t手机号码：</text>
+        <text style='font-size:14px;margin-right:20px' class='text-grey'>{{resume.user_phone}}</text>
+
+        <button class='cu-btn round bg-green  sm shadow padding-sm' style='float:right;margin-right:20px' bindtap='call_phone'>
+          <text class='icon-dianhua4'></text> 一键呼叫</button>
+
+      </view>
+
+
+
+    </view>
+
+    <view style='height:30rpx'></view>
+
+
+
+
+    <view class='k1 bg-white'>
+
+
+      <view class='icon-medal t1 padding3 text-blue '>
+        <text style='font-size:14px ' class='text-black '>\t\t期望职位：</text>
+
+        <view style='font-size:14px;padding-left:170rpx' class='t text-grey' wx:for="{{position_list}}" wx:key>{{item}}</view>
+
+
+
+      </view>
+
+      <view class='icon-locationfill t1 padding3 text-red'>
+        <text style='font-size:14px' class='text-black'>\t\t期望地点：</text>
+
+        <view style='font-size:14px;padding-left:170rpx' class='t text-grey' wx:for="{{place_list}}" wx:key>{{item}}</view>
+        <!-- <text style='font-size:14px' class='text-grey'>{{resume.place_content}}</text> -->
+      </view>
+
+      <!-- <view class='icon-moneybag t1 padding3 text-yellow'>
+        <text style='font-size:14px' class='text-black'>\t\t期望薪资：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.expected_salary!=0?resume.expected_salary:"保密"}}</text>
+      </view> -->
+
+
+    </view>
+    <view style='height:30rpx' wx:if="{{work_exp_list.length!=0}}"></view>
+
+    <view class='k1 bg-white' wx:if="{{work_exp_list.length!=0}}">
+
+      <view class='icon-newshot t1 padding4 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t工作经历：\n</text>
+
+        <view style='padding-left:22px' class='text-grey' wx:for="{{work_exp_list}}" wx:key>
+          <text style='font-size:16px;font-weight:500' class='text-black'>{{item.company_name}}\n</text>
+          <text style='font-size:14px' class='text-grey'>工作时间:<text class='text-grey'>{{item.work_time}}</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>薪资水平: <text class='text-grey'>{{item.work_salary}}</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>在职职位： <text class='text-grey'>{{item.work_position}}</text> </text>
+        </view>
+
+      </view>
+
+    </view>
+    <view style='height:30rpx' wx:if="{{resume.graduate_school!=''}}"></view>
+
+    <!-- 教育经历 -->
+    <view class='k1 bg-white' wx:if="{{resume.graduate_school!=''}}">
+
+      <view class='icon-newshot t1 padding4 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t教育经历：\n</text>
+        <view style='padding-left:22px' class='text-grey'>
+          <text style='font-size:16px;font-weight:500' class='text-black'>{{resume.graduate_school}}\n</text>
+          <text style='font-size:14px' class='text-grey'>专业:<text class='text-grey'>{{resume.major!=null?resume.major:"保密"}}</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>毕业时间: <text class='text-grey'>{{resume.graduate_time!=null?resume.graduate_time:"保密"}}</text> \n</text>
+        </view>
+      </view>
+
+    </view>
+
+
+    <view class='icon-service t1  k3 padding5 text-mauve bg-white' wx:if="{{resume.self_evaluation.length>1}}">
+      <text style='font-size:14px' class='text-black'>\t\t自我评价：\n</text>
+      <view style='padding-left:22px'>
+        <text style='font-size:14px' class='text-grey'>{{resume.self_evaluation}}</text>
+      </view>
+    </view>
+
+
+    <view class='icon-we t1  k2 padding5 text-yellow bg-white' wx:if="{{resume.subject_evaluation.length>1}}">
+      <text style='font-size:14px' class='text-black'>\t\t测评结果：\n</text>
+      <view style='padding-left:22px'>
+        <text style='font-size:16px' class='text-grey'>{{resume.subject_name}}\n\n</text>
+
+        <text style='font-size:14px' class='text-grey'>{{resume.subject_evaluation}}</text>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+  </view>
+
+
+
+
+
+</view>
+
+
+
+
+<view style='height:100px' class='bg-gray'></view>
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在加载..</view>
+</view>
+
+
+<!-- <button class='cu-btn round bg-red shadow padding-sm tianjia'>点击添加到简历库</button> -->
+<!-- <button class='cu-btn bg-grey lg'>玄灰</button> -->
+<form report-submit='true' bindsubmit='submit'>
+  <button open-type='submit' wx:if="{{referer==0}}" class='get_phone  shadow {{no_get_phone?"bg-grey":"bg-red"}}' bindtap='{{no_get_phone?"":"add_resume"}}' style=' background-color:{{bg_color}}'>获取联系方式</button>
+</form>
+
+
+
+
+<view class='cu-load load-modal' wx:if="{{add_resume}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>添加到简历库</view>
+</view>

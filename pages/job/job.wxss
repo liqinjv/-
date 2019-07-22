@@ -1,0 +1,109 @@
+.mtop{
+  margin-top: 10px
+
+}
+
+.border-bottom{
+  border-bottom:0.3px solid rgb(245, 245, 245)
+
+}
+
+.placeholderStyle{
+  
+  font-size: 12px;
+  text-align: right
+}
+
+.vh{
+  height:8vh
+}
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 100%;
+   padding:0;
+   margin-right:10px
+ 
+
+}
+
+/* pages/component/nav/nav.wxss */
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  height: 50px;
+  position: relative;
+}
+
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.VerticalBox{
+  display: flex;
+}
+.VerticalMain{
+  background-color: #f1f1f1;
+}
+.ding{
+  position :fixed;
+  width:90%;
+  padding:10px 20px 100px 20px ;
+  text-align: left;
+  /* border-radius:3px 400px 500px 6px */
+
+}
+.right{
+
+  position: absolute;
+  right:5px
+}
+
+.smail_txt{
+
+  font-size: 13px
+}
+
+.boder-bottom{
+  border-bottom: 1px solid #ff8f00;
+  padding-bottom: 5px;
+
+}
+
+
+
+/*checkbox 整体大小  */
+checkbox {
+  width: 23px;
+  height: 25.5px;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+  width: 15px;
+  height: 15px;
+}
+
+.picker{
+  font-size: 13px;
+  color: #3d3d3d
+}

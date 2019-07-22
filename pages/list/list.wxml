@@ -1,0 +1,174 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;数据汇总</text>
+
+  </view>
+</view>
+
+<!-- <view class="flex bg-white">
+  <view class='flex-sub  padding-10 margin-xs radius {{select=="xcx"?"solid-bottom2":""}}' style='text-align:center;border-radius: 5px' bindtap='xcx'>小程序数据</view>
+  <view class='flex-sub   padding-10 margin-xs radius {{select=="resume"?"solid-bottom2":""}} ' style='text-align:center;border-radius: 5px' bindtap='resume'>简历数据</view>
+</view> -->
+
+
+<!-- <van-tabs bind:click="onClick" bind:change='van_tabs'> -->
+  <!-- <van-tab title="小程序数据">
+    <view class="flex   justify-between bg-white">
+      <view class=' padding-sm margin-xs radius' style='font-size:14px'>昨日概况
+        <text class='icon-info'></text>
+      </view>
+      <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'>数据更新至{{y}}</view>
+    </view>
+
+
+    <view class=' bg-white' style='padding-bottom:30rpx'>
+
+      <view class="grid col-4  text-center bg-white">
+        <view class='sm_text text-grey right-solid'>访问人数</view>
+        <view class='sm_text text-grey right-solid'>新访问人数</view>
+        <view class='sm_text text-grey right-solid'>总添加人数</view>
+        <view class='sm_text text-grey'>新添加数</view>
+      </view>
+
+      <view class="grid col-4  text-center bg-white">
+        <view class='big_num text-grey right-solid'>100</view>
+        <view class='big_num text-grey right-solid'>20</view>
+        <view class='big_num text-grey right-solid'>889</view>
+        <view class='big_num text-grey'>10</view>
+      </view>
+    </view>
+
+    <view style='height:10rpx' class='bg-d'></view>
+
+    <view>
+      <view class="flex   justify-between bg-white">
+        <view class=' padding-sm margin-xs radius' style='font-size:14px'>今日访问量</view>
+        <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+      </view>
+
+    </view>
+
+    <view class="container bg-white" style='padding-bottom:30rpx'>
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+    </view>
+    <view style='height:10rpx' class='bg-d'></view>
+
+
+    <view>
+      <view class="flex   justify-between bg-white">
+        <view class=' padding-sm margin-xs radius' style='font-size:14px'>近7天打开次数</view>
+        <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+      </view>
+    </view>
+
+
+    <view class="container bg-white">
+      <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+
+    <view style='height:5vh' class='bg-white'></view>
+
+
+  </van-tab>
+
+  <van-tab title="简历数据"> -->
+    <view class="flex   justify-between bg-white">
+      <view class=' padding-sm margin-xs radius' style='font-size:14px'>简历数据概况
+        <text class='icon-info'></text>
+      </view>
+      <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'>更新时间：{{mytime}}</view>
+    </view>
+
+
+    <view class=' bg-white' style='padding-bottom:30rpx'>
+
+      <view class="grid col-4  text-center bg-white">
+        <view class='sm_text text-grey right-solid'>简历总数</view>
+        <view class='sm_text text-grey right-solid'>当日新增</view>
+        <view class='sm_text text-grey right-solid'>线上简历数</view>
+        <view class='sm_text text-grey'>线下简历数</view>
+      </view>
+      <view class="grid col-4  text-center bg-white">
+        <view class='big_num text-grey right-solid'>{{data.company_resume_count}}</view>
+        <view class='big_num text-grey right-solid'>{{data.today_count}}</view>
+        <view class='big_num text-grey right-solid'>{{data.online_count.online_count}}</view>
+        <view class='big_num text-grey'>{{data.online_count.not_online_count}}</view>
+      </view>
+    </view>
+
+
+
+    <!-- <view class="container bg-white" style='padding-bottom:30rpx'>
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+    </view>
+    <view style='height:10rpx' class='bg-d'></view> -->
+
+
+    <view>
+      <view class="flex   justify-between bg-white">
+        <view class=' padding-sm margin-xs radius' style='font-size:14px'>简历概况</view>
+        <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+      </view>
+
+    </view>
+
+    <view class="container bg-white">
+      <canvas canvas-id="pieCanvas" class="canvas" style="height:300px" bindtouchstart="touchHandler"></canvas>
+    </view>
+
+    <view style='height:10rpx' class='bg-d'></view>
+
+
+    <view>
+      <view class="flex   justify-between bg-white">
+        <view class=' padding-sm margin-xs radius' style='font-size:14px'>近7天简历量</view>
+        <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+      </view>
+
+    </view>
+
+    <view class="container bg-white" style='padding-bottom:30rpx'>
+      <canvas canvas-id="lineCanvas2" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+    </view>
+    <view style='height:10rpx' class='bg-d'></view>
+
+
+    <view class="flex   justify-between bg-white">
+      <view class=' padding-sm margin-xs radius' style='font-size:14px'>学历分布</view>
+      <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+    </view>
+
+    <view class="container bg-white">
+
+      <canvas canvas-id="columnCanvas" class="canvas" bindtouchstart=""></canvas>
+    </view>
+       
+       
+   <view style='height:10rpx' class='bg-d'></view>
+    <view class="flex   justify-between bg-white">
+      <view class=' padding-sm margin-xs radius' style='font-size:14px'>性别分布</view>
+      <view class=' padding-sm margin-xs radius text-grey' style='font-size:10px'></view>
+    </view>
+
+    <view class="container bg-white">
+      <canvas canvas-id="pieCanvas2" class="canvas" style="height:300px" bindtouchstart="touchHandler4"></canvas>
+    </view>
+
+
+
+
+  <!-- </van-tab>
+</van-tabs> -->
+
+
+
+
+
+
+
+<!-- 底部 -->
+<view style='height:5vh' class='bg-white'></view>

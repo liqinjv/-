@@ -1,0 +1,25 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;职位描述</text>
+  </view>
+</view>
+
+
+  <view class="cu-form-group text_position"  >
+    <textarea class='text-black' style='height:50vh' bindinput='text' placeholder="请输入职位描述.." maxlength="500" value='{{data_value}}' disabled="{{modalName!=null}}" placeholder-class='placeholder'></textarea>
+
+    <text class='sm_massage text-grey'>{{num}}/500</text>
+  </view>
+
+
+
+
+
+  
+<view >
+<button class="cu-btn  bg-gradual-orange  lg button-hover bottom " bindtap='save' style='padding:0' role="button"aria-label=""aria-disabled="false">
+<text class="icon-loading2 iconfont-spin" wx:if="{{is_save}}" ></text>
+点击保存
+</button>
+</view>

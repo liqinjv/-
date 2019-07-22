@@ -1,0 +1,77 @@
+/* pages/test/test.wxss */
+
+.k1{
+  
+  width: 100%;
+  height: 370rpx;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  -moz-box-shadow:3px 3px 13px #d1d1d1; -webkit-box-shadow:3px 3px 13px #d1d1d1; box-shadow:3px 3px 13px #d1d1d1;
+  text-align:center;
+  font-size:18px;
+  /* border: 1px solid red */
+
+}
+
+
+.sm_state{
+  position: relative;
+  bottom:110rpx;
+  left:180rpx;
+  font-size:12px;
+  font-weight: 800
+}
+
+
+.icon{
+  font-size:70rpx;
+  position: relative;
+  top:-85rpx;
+  left:-280rpx
+}
+
+.padding_20{
+  padding: 20rpx
+}
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1555496960695'); /* IE9 */
+  src: url('iconfont.eot?t=1555496960695#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAKUAAsAAAAABkgAAAJHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcApIZgE2AiQDCAsGAAQgBYRtBzoblgXIDiVBl9iA4QIFRQTf7/fbc9/93xFNqpFomkRDJNGIhESCkEmF0hhC8qrt7Tf35o9BL/OAqBAKuZavL80nN3R6csKTH6vZyRlwTf1fAA0kzxcuEUFRyZGAA5sOtAPXZBvJyDeMXeASzhNoGtEls7OytQtVMmtaIK49x4CqXECWWbouVGvWZvGgXD3dpRfgPvx+fBmIKpJKwao6vlq2Ye51yM4qrsorpz4hCALaXEGBJSAT57WJQ6WCMUo1E2UmwL7Kg9ehsvTtYq8Wwf46q7QNhqD0nmSu/FZLE8jxYDcwNuohpGrztqlY/vh8uL97sH9wsLe3O3K75s6VPvx37O4tvfGUzdN+dXZ81TwuIl+EfxbmAMrHDMUBZBB8/z5dXTSu/NdbGbx8d4byfi5Q340z+B2ynh1ZV1i2lFVZrSvpHjU1oamJErCn189Y48C5M6Fu4A5cNcMpCnVTZKYvoaJlGVV162hatLq5pQ8rFbmBBfcAodsDkk5PKHR7JTP9GxWD/lDVHaVouoy+PVtmwqvZZjKEbDSL6Fk6Vo5DaqLybXKyocFZRcjcJ069MPb39BXTqxQTz7EgzTkDIgoV6whXwGUUhhoT1j5Z0uOKJBO9varuTT2WjqDGNkYMgtiQqQh5LFpM+f1FTenz24gjK2Tglpqa8D7CUt7wqF+Pvh7kqjbuVXMv16RyHAOEUJDCtAhaAaNIKKShpH6Uj1hED3dELDGh1+6l+mp71tdHH1DCGrBMKeyFhe4bV2ctI3Z8z9CmawEAAAAA') format('woff2'),
+  url('iconfont.woff?t=1555496960695') format('woff'),
+  url('iconfont.ttf?t=1555496960695') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1555496960695#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shoucangjiaobiao:before {
+  content: "\e634";
+}
+
+.jiaobiao{
+
+  position: absolute;
+  right: 31rpx;
+  font-size:80rpx;
+  margin-top: -7rpx
+  
+}
+
+.padding_b{
+  padding-top:30rpx;
+  padding-bottom: 0rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx
+}
+
+.green-border{
+  border: 0.5px solid rgb(0, 87, 7)
+
+}

@@ -1,0 +1,15 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <!-- <view class='content' style='top:{{StatusBar}}px;'>宝典</view> -->
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:18px' bindtap='back'></text> -->
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;职场宝典</text>
+
+  </view>
+</view>
+
+<!-- <web-view src="{{url}}"></web-view> -->
+
+<view>
+<web-view src="{{url}}" bindload="load_success" binderror='load_error'></web-view> 
+
+</view>

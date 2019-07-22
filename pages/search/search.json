@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-search": "/dist/search/index"
+  },
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

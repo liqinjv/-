@@ -1,0 +1,51 @@
+<!-- 
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-orange" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>招骋工具</view>
+    <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text>
+  </view>
+</view> -->
+
+<!-- <image src='/imgs/index/tools.png' mode='widthFix' class='png' style='width:100%;height:486rpx'></image> -->
+<view class='cu-custom' style="height:{{CustomBar*2}}px;">
+  <view class="cu-bar fixed {{theme}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'>招骋工具</view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+  </view>
+
+
+
+
+
+<view class='nav-list' >
+
+    <navigator hover-class='none' url="../{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}} margin-bottom" style='animation: show {{(index+1)*0.2+1}}s 1;-webkit-animation: show {{(index+1)*0.2+1}}s 1;' wx:for="{{elements}}" wx:key >
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name" style='height:40rpx'>
+      
+      </view>
+      <text class='icon-{{item.icon}}'></text>
+      <view wx:if="{{index==4}}" class='weikaitong'>敬请期待</view>
+    </navigator>
+
+</view>
+
+
+
+
+<view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+  <view class="cu-dialog center">
+    
+      <view class='login_title'>登录/注册24猎</view>
+  <view class=' flex  justify-center'>
+    <button class='cu-btn block bg-green margin-tb-sm lg ' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" > <text class='icon-weixin' style='margin-right:2px'></text>微信帐号快速登录 <text decode='true'>&nbsp;</text></button>
+  </view>
+  
+  <view class=' flex  justify-center' >
+    <button class='cu-btn block bg-gray margin-tb-sms lg text-black' bindtap='phone_log_in' ><text class='icon-shouji' ></text>手机号注册/登录　</button>
+  </view>
+    
+ 
+  </view>
+</view>

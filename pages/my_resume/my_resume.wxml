@@ -1,0 +1,194 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed {{theme}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px' >我的简历</view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+  </view>
+
+
+      <!-- 个人信息 -->
+      <view class="name ">
+        <text class='big_name'>{{resume_data.user_name}}\n</text>
+        
+        <view class='icon-post post text-orange font-weight' bindtap='set_basics'></view>
+
+        <text class='name_text' style='line-height: 30px'>{{resume_data2.sex}}   /   {{resume_data.age}}岁  /   {{resume_data2.work_year}}年工作经验\n</text>
+
+        <view class="flex  align-center ">
+          <text class='name_text'> <text class='icon-mobilefill icon_bg ' > </text> {{resume_data.user_phone}}\n</text>
+        </view>
+
+        <view class="flex  align-center">
+          <text class='name_text'> <text class='icon-mail icon_bg '> </text> {{resume_data.email}}\n</text>
+        </view>
+        
+      </view>
+
+
+      <!-- 求职意向 -->
+      <view class="name">
+
+          <view class="flex  align-center ">
+          <text class='title'><text class='icon-newsfill text-orange title-img'></text> 求职意向\n</text>
+          </view>
+
+        <!-- <view class='icon-post post text-orange font-weight' bindtap='set_job'></view> -->
+
+      
+
+        <view class="flex  align-center ">
+            <text class='name_text'>期望地点：</text>
+            <text class='name_text'>{{resume_data2.need_place__name}}\n</text>
+        </view>
+
+        <view class="flex  align-center ">
+            <text class='name_text'>期望薪资：</text>
+            <text class='name_text'>{{resume_data.expected_salary}}元/月\n</text>
+        </view>
+
+        <view class="flex  align-center ">
+            <text class='name_text'>职位类别：</text>
+            <text class='name_text'>{{resume_data2.position__name}}\n</text>
+        </view>
+
+        <view class="flex  align-center ">
+            <text class='name_text'>行业类别：</text>
+            <text class='name_text'>{{resume_data2.industry__name}}\n</text>
+        </view>
+        
+      </view>
+
+
+
+
+      <!-- 工作经历 -->
+      <view class="name">
+
+          <view class="flex  align-center">
+              <text class='title'><text class='icon-profilefill text-orange title-img'></text> 工作经历\n</text>
+              
+          </view>
+          <!-- <view class='icon-post post text-orange font-weight' bindtap='work_exp'></view> -->
+
+
+           <view class=' '>
+              <text class='name_text'>{{resume_data.latest_company}}</text>
+
+              <view class="flex  align-center ">
+                  <!-- <text class='name_text margin-right'>{{resume_data.last_company}}</text> -->
+                  <text class='name_text'>{{resume_data.latest_salary}}元/月</text>
+              </view>
+
+              <view class="flex  align-center ">
+                  <text class='name_text margin-right5 '>{{resume_data2.work_time}}</text>
+                  <!-- <text class='name_text margin-right5 '> - </text>
+                  <text class='name_text '>2020/09/09</text> -->
+              </view>
+
+              <text class='name_text margin-top'>工作内容:\n</text>
+              <text class='name_text'>{{resume_data.last_content}}</text>
+              
+              
+            
+          </view>
+
+
+
+          <!-- <view style='margin-top:50rpx'>
+          <view class='icon-post post text-orange font-weight' bindtap='work_exp'></view>
+
+           <view class=' ' >
+              <text class='name_text'>高级软件工程师</text>
+
+              <view class="flex  align-center ">
+                  <text class='name_text margin-right'>智联招骋</text>
+                  <text class='name_text'>10000-20000元/月</text>
+              </view>
+
+              <view class="flex  align-center ">
+                  <text class='name_text margin-right5 '>2019/09/09</text>
+                  <text class='name_text margin-right5 '> - </text>
+                  <text class='name_text '>2020/09/09</text>
+              </view>
+
+              <text class='name_text margin-top'>工作内容:\n</text>
+              <text class='name_text'>工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述</text>
+              
+              
+            
+          </view>
+          </view> -->
+
+
+         
+
+      </view>
+
+
+
+
+
+      <!-- 教育背景 -->
+      <view class="name">
+
+          <view class="flex  align-center">
+              <text class='title'><text class='icon-read text-orange title-img'></text> 教育背景\n</text>
+          </view>
+
+          <!-- <view class='icon-post post text-orange font-weight'  bindtap='edu_exp'></view> -->
+
+
+
+          <view class=' margin-bottom ' style='width:80%' >
+              <text class='name_text'>{{resume_data.graduate_school}}\n</text>
+              <text class='name_text'>{{resume_data.major}}\n</text>
+              <text class='name_text'>{{resume_data.graduate_time}}毕业</text>
+             
+          </view>
+
+      </view>
+
+
+
+      <!-- 个人评价 -->
+      <view class="name">
+
+          <view class="flex  align-center">
+              <text class='title'><text class='icon-read text-orange title-img'></text> 个人评价\n</text>
+          </view>
+
+          <view class='icon-post post text-orange font-weight' bindtap='self_eval'></view>
+
+          <text class='name_text'>{{resume_data.self_evaluation}}</text>
+
+
+
+
+
+      </view>
+
+
+
+
+<view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+  <view class="cu-dialog center">
+    
+      <view class='login_title'>登录/注册24猎</view>
+  <view class=' flex  justify-center'>
+    <button class='cu-btn block bg-green margin-tb-sm lg ' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" > <text class='icon-weixin' style='margin-right:2px'></text>微信帐号快速登录 <text decode='true'>&nbsp;</text></button>
+  </view>
+  
+  <view class=' flex  justify-center' >
+    <button class='cu-btn block bg-gray margin-tb-sms lg text-black' ><text class='icon-shouji' ></text>手机号注册/登录　</button>
+  </view>
+   
+ 
+  </view>
+</view>
+
+
+
+
+
+
+

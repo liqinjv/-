@@ -1,0 +1,67 @@
+/* pages/setting_home/setting_home.wxss */
+
+.save {
+  position: fixed;
+  bottom: 40rpx;
+  width: 100%;
+}
+
+.he {
+  height: 350rpx;
+}
+
+.he2 {
+  height: 150px;
+}
+
+.tishi {
+  position: absolute;
+  /* top:250rpx; */
+  color: #c4c4c4;
+  right: 30rpx;
+  padding-left: 200px;
+  font-size: 12px;
+}
+
+.tishi2 {
+  position: relative;
+  color: #c4c4c4;
+  top:-70rpx;
+  left:88%;
+  
+  font-size: 12px;
+}
+.cu-form-group {
+  background: #fff;
+  padding: 1rpx 30rpx;
+  display: flex;
+  align-items: center;
+  min-height: 100rpx;
+  justify-content: space-between;
+}
+
+.cu-form-group picker {
+  text-align: right;
+  flex: 1;
+   padding-right: 40rpx; 
+   overflow: hidden;
+  position: relative;  
+}
+
+
+.cu-dialog {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 680rpx;
+  
+  max-width: 100%;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  overflow: hidden;
+  height: 90%
+}
+
+

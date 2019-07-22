@@ -1,0 +1,365 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:18px' bindtap='back'></text> -->
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;简历详情</text>
+
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+
+<view class='bg-gray'>
+  <view style='height:30rpx'></view>
+  <view class='center'>
+    <view wx:if="{{resume.face_pic==null||resume.face_pic==''}}" class="cu-avatar xl round " style="background-image:url({{resume.sex==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+    <view wx:else class="cu-avatar xl round " style="background-image:url({{resume.face_pic}});"></view>
+
+    <view class='padding'>
+      <text style='font-size:20px; font-weight:400'>{{resume.user_name}}</text>
+    </view>
+    <view>
+      <!-- <text style='font-size:14px' class='text-blue'>{{resume.sex==1?"男":"女"}} | {{resume.age}}岁 | {{resume.is_married==1?"已婚":"未婚"}} | {{resume.edu_background}} | {{resume.expected_salary}}元</text> -->
+      <text style='font-size:14px' class='text-blue'>{{resume.sex==1?"男":"女"}} | {{resume.age}}岁 | {{resume.is_married==1?"已婚":"未婚"}} | {{resume.edu_background}}</text>
+    </view>
+  </view>
+
+  <view class='padding'>
+
+    <!-- 手机号邮箱 -->
+    <view class='k1 bg-white'>
+
+
+      <view class='icon-phone t1 padding3 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t手机号码：</text>
+        <text style='font-size:14px;margin-right:20px' class='text-grey'>{{resume.user_phone}}</text>
+
+        <button class='cu-btn round bg-green  sm shadow padding-sm' style='float:right;margin-right:20px' bindtap='call_phone'>
+          <text class='icon-dianhua4'></text> 一键呼叫</button>
+
+      </view>
+
+      <view class='icon-mail t1 padding3 text-orange'>
+        <text style='font-size:14px' class='text-black'>\t\t邮箱：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.email}}</text>
+      </view>
+
+      <view class='icon-profile t1 padding3 text-blue'>
+        <text style='font-size:14px' class='text-black'>\t\t身份证号码：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.idcard}}</text>
+      </view>
+
+      <view class='icon-home t1 padding3 text-brown'>
+        <text style='font-size:14px' class='text-black'>\t\t户口所在地：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.native_place}}</text>
+      </view>
+
+      <view class='icon-crown t1 padding3 text-yellow'>
+        <text style='font-size:14px' class='text-black'>\t\t现居地：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.place__name}}</text>
+      </view>
+
+      <view class='icon-baby t1 padding3 text-pink'>
+        <text style='font-size:14px' class='text-black'>\t\t出生年月：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.birthday}}</text>
+      </view>
+
+
+    </view>
+
+    <view style='height:30rpx'></view>
+
+
+
+
+    <view class='k1 bg-white'>
+      <view class='icon-medal t1 padding3 text-blue '>
+        <text style='font-size:14px ' class='text-black '>\t\t期望职位：</text>
+
+        <view style='font-size:14px;padding-left:29%;' class='t text-grey' wx:for="{{resume_position}}" wx:key>{{item}}</view>
+
+
+
+      </view>
+
+      <view class='icon-locationfill t4 padding3 text-red' style=''>
+        <text style='font-size:14px' class='text-black'>\t\t期望地点：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.place__name}}</text>
+      </view>
+
+      <view class='icon-moneybag t1 padding3 text-yellow'>
+        <text style='font-size:14px' class='text-black'>\t\t期望薪资：</text>
+        <text style='font-size:14px' class='text-grey'>{{resume.expected_salary}}元</text>
+      </view>
+
+
+    </view>
+    <view style='height:30rpx'></view>
+
+    <view class='k1 bg-white'>
+
+      <view class='icon-newshot t1 padding4 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t工作经历：\n</text>
+        <view style='padding-left:22px' class='text-grey'>
+          <text style='font-size:16px;font-weight:500' class='text-black'>{{resume.latest_company}}\n</text>
+          <text style='font-size:14px' class='text-grey'>工作时间:<text class='text-grey'>{{resume.work_time}}</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>薪资水平: <text class='text-grey'>{{resume.latest_salary}}元</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>在职职位： <text class='text-grey'>{{resume.latest_position__name}}</text> </text>
+        </view>
+      </view>
+
+    </view>
+    <view style='height:30rpx'></view>
+
+    <!-- 教育经历 -->
+    <view class='k1 bg-white'>
+
+      <view class='icon-xuelijianjie t1 padding4 text-green'>
+        <text style='font-size:14px' class='text-black'>\t\t教育经历：\n</text>
+        <view style='padding-left:22px' class='text-grey'>
+          <text style='font-size:16px;font-weight:500' class='text-black'>{{resume.graduate_school}}\n</text>
+          <text style='font-size:14px' class='text-grey'>专业:<text class='text-grey'>{{resume.major}}</text> \n</text>
+          <text style='font-size:14px' class='text-grey'>毕业时间: <text class='text-grey'>{{resume.graduate_time}}</text> \n</text>
+        </view>
+      </view>
+
+    </view>
+
+
+    <view class='icon-service t1  k2 padding5 text-mauve bg-white'>
+      <text style='font-size:14px' class='text-black'>\t\t自我评价：\n</text>
+      <view style='padding-left:22px'>
+        <text style='font-size:14px' class='text-grey'>{{resume.self_evaluation}}</text>
+      </view>
+    </view>
+
+
+    <view class='icon-we t1  k2 padding5 text-yellow bg-white' wx:if="{{jobhunter_subject.length!=0}}">
+      <text style='font-size:14px' class='text-black'>\t\t测评结果：\n</text>
+      <view style='padding-left:22px' wx:for="{{jobhunter_subject}}" wx:key>
+        <text style='font-size:16px;' class='text-grey'>{{item.subject__subject_name}}\n</text>
+        <view style='height:10rpx'></view>
+
+        <text style='font-size:14px' class='text-grey'>{{item.evaluation}}</text>
+        <view style='height:35rpx'></view>
+      </view>
+    </view>
+
+    <view class='icon-beizhu t1  k2 padding5 text-red bg-white' wx:if="{{remarkss.length!=0}}">
+      <text style='font-size:14px' class='text-black'>\t\t备注：\n</text>
+      <view style='padding-left:22px'>
+
+        <text style='font-size:14px' class='text-grey'>{{remarkss}}</text>
+      </view>
+    </view>
+
+
+  </view>
+
+
+
+
+</view>
+
+
+
+
+<view style='height:100px' class='bg-gray'></view>
+
+<view class="bottom-fixed bg-white ">
+  <view class="grid col-3  text-center bg-white">
+
+
+    <view bindtap='select' data-num='1' class=" padding {{select==1?'text-black ':' text-grey'}}">
+      <text class='icon-roundclose {{select==1?"text-red":"text-grey"}}' style='font-size:20px'></text>
+      <text decode='true'>&nbsp;&nbsp;不合格</text> </view>
+
+    <view bindtap='select' data-num='2' class=" padding {{select==2?'text-orange ':' text-grey'}} ">
+      <text class='icon-timefill  {{select==2?"text-orange":"text-grey"}}' style='font-size:20px'></text>
+      <text decode='true'>&nbsp;&nbsp;可复试</text> </view>
+
+    <view bindtap='select' data-num='3' class=" padding {{select==3?'text-green ':' text-grey'}} ">
+      <text class='icon-mail {{select==3?"text-green":"text-grey"}}' style='font-size:20px'></text>
+      <text decode='true'>&nbsp;&nbsp;发offer</text> </view>
+
+  </view>
+
+</view>
+
+
+
+<!-- 发offer窗口 -->
+<view class="cu-modal {{fa_offer?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>确认offer信息</view>
+      <view class='action' bindtap='offer_no'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class='padding-xl'>
+
+      <view class="cu-form-group margin-top">
+        <view class='title'>岗位名称</view>
+        <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+          <view class="picker" style='padding-right:30rpx'>
+            {{picker[index]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group">
+        <view class='title'>入职日期</view>
+        <picker mode="date" value="{{date}}" start="2015-09-01" end="2025-09-01" bindchange="DateChange">
+          <view class="picker" style='padding-right:30rpx'>
+            {{date}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group">
+        <view class='title'>入职时间</view>
+        <picker mode="time" value="{{time}}" start="00:01" end="23:59" bindchange="TimeChange">
+          <view class="picker" style='padding-right:30rpx'>
+            {{time}}
+          </view>
+        </picker>
+      </view>
+
+
+      <view class="cu-form-group">
+        <view class='title'>公司名称：</view>
+        <input maxlength='200' placeholder="请输入公司名称" placeholder-style='font-size:12px;text-align:right' class='radius' bindinput='company_name' value='{{company_name}}' style='font-size:14px;text-align:right'></input>
+        <text class='icon-right' style='font-size:12px'></text>
+      </view>
+
+      <!-- <view class="cu-form-group">
+        <view class='title'>联系人员：</view>
+        <input maxlength='200' placeholder="请输入联系名称" placeholder-style='font-size:12px;text-align:right' class='radius' bindinput='contacts' value='{{contacts}}' style='font-size:14px;text-align:right'></input>
+        <text class='icon-right' style='font-size:12px'></text>
+      </view>
+
+      <view class="cu-form-group">
+        <view class='title'>联系电话：</view>
+        <input maxlength='200' placeholder="请输入联系电话" placeholder-style='font-size:12px;text-align:right' class='radius' bindinput='contacts_phone' value='{{contacts_phone}}' style='font-size:14px;text-align:right'></input>
+        <text class='icon-right' style='font-size:12px'></text>
+      </view> -->
+
+      <view class="cu-form-group">
+        <view class='title'>公司地址：</view>
+        <input maxlength='200' placeholder="请输入公司地址" placeholder-style='font-size:12px;text-align:right' class='radius' bindinput='company_address' value='{{company_address}}' style='font-size:14px;text-align:right'></input>
+        <text class='icon-right' style='font-size:12px'></text>
+      </view>
+
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='width cu-btn line-green text-green' bindtap='offer_no'>取消</button>
+        <button class='width cu-btn bg-green margin-left' bindtap='offer_yes'>确定</button>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在加载...</view>
+</view>
+
+
+<view class='post' bindtap='beizhu'>
+  <text class='icon-beizhu' style='font-size:16px;color:#CC3333'></text>
+  <text style='font-size:13px;line-height:30rpx;bottom:5rpx' class='text-grey'>面试备注</text>
+</view>
+
+
+<!-- 添加备注信息框 -->
+<view class="cu-modal {{beizhu?'show':''}}">
+  <view class="cu-dialog2">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>面试备注</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red' bindtap='beizhu2'></text>
+      </view>
+    </view>
+    <view class="cu-form-group " wx:if="{{beizhu}}">
+      <textarea value='{{remarkss}}' placeholder="请填写备注信息" maxlength="250" bindinput='input_beizhu' style='text-align:left'></textarea>
+    </view>
+
+    <view class="cu-bar bg-white justify-end">
+      <view class='action'>
+        <button class='cu-btn line-green text-green' bindtap='beizhu2' style='width:100rpx'>取消</button>
+        <button class='cu-btn bg-green margin-left' bindtap='beizhu1' style='width:100rpx'>确定</button>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 添加备注信息框 -->
+<view class="cu-modal {{xiugai?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>修改信息</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red ' style='font-size:24px' bindtap='xiugai23'></text>
+      </view>
+    </view>
+
+    <view class="cu-form-group vh">
+      <view class='title'>姓名</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' value='{{new_name}}' placeholder="必填" maxlength="6" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='new_name'></input>
+    </view>
+
+    <view class="cu-form-group vh">
+      <view class='title'>年龄</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="2" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='new_age' value='{{new_age}}'></input>
+    </view>
+
+    <!-- <view class="cu-form-group vh">
+      <view class='title'>性别</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="6" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formName' value='{{name}}'></input>
+    </view> -->
+
+    <!-- <view class="cu-form-group vh">
+      <view class='title'>学历</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="6" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='formName' value='{{name}}'></input>
+    </view> -->
+
+
+    <view class="cu-form-group vh">
+      <view class='title'>邮箱</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="30" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='new_email' value='{{new_email}}'></input>
+    </view>
+
+    <view class="cu-form-group vh">
+      <view class='title'>手机号码</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="11" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='new_user_phone' value='{{new_user_phone}}'></input>
+    </view>
+
+    <view class="cu-form-group vh">
+      <view class='title'>身份证号</view>
+      <input placeholder-style='font-size:12px;color:#c0c0c0' placeholder="必填" maxlength="18" class='radius text-right' name='input' placeholder-class="placeholderStyle" bindinput='new_idcard' value='{{new_idcard}}'></input>
+    </view>
+
+    <view class='padding' style='padding-top:30rpx' bindtap='set_resume_save'>
+      <button class=" cu-btn block bg-orange margin-tb-sm lg" role="button" aria-disabled="false" style='border-radius:100px;height:80rpx'>保存修改信息</button>
+    </view>
+
+
+
+  </view>
+</view>
+
+
+<view bindtap='xiugai' class='xiugai'>
+  <text class='icon-post text-orange' style='font-size:16px;font-weight:600'></text>
+  <text style='font-size:12px;' class='text-gray'>修改简历</text>
+</view>

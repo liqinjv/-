@@ -1,0 +1,58 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'>人才模型设置</view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+    <!-- <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'></text> -->
+  </view>
+  </view>
+
+<view class='v1' style='background:#fff'>
+
+
+    <view class="login-icon" > 
+    <image class="login-img" src="/imgs/resume/liechang.png" ></image> 
+    </view>
+    <view style='  text-align: center;margin-left:20%;margin-right:20%;font-size:14px;color:#778899;padding:5px;margin-bottom:20px;margin-top:20px'> <text> 简单两步\n设置您所需的人才模型</text>\n
+    <image class="jindu-img" src="/imgs/init/jindu1.png" ></image> 
+    </view>
+
+  <view class='kang1'> 
+
+    <view class="section">
+    <picker mode="multiSelector" bindchange="bind_place2" bindcolumnchange="bind_place" value="{{multiIndex2}}" range="{{multiArray2}}">
+      <view class="section__title" style='font-size:14px'>您所在的地区</view>
+      <view class="picker">
+        <button>{{city_list[shi]}} 　{{select_shi[qu]}} </button>
+      </view>
+    </picker>
+  </view>
+
+
+
+    
+    <view class="section">
+    <picker  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="section__title" style='font-size:14px'>您所在的行业</view>
+      <view class="picker">
+        <button>{{array[index]}}</button>
+      </view>
+    </picker>
+  </view>
+
+
+  
+    <view class="section">
+    <picker  bindchange="bindPickerChange2" value="{{index2}}" range="{{array2}}">
+      <view class="section__title" style='font-size:14px'>您所在的行业分类</view>
+      <view class="picker">
+        <button>{{array2[index2]}}</button>
+      </view>
+    </picker>
+  </view>
+    
+
+
+  <button class='next' bindtap="next">下一步</button>
+</view> 
+
+</view>

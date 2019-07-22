@@ -1,0 +1,131 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;简历管理</text>
+
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+
+<view class='flex   bg-white ' style='padding-top:10rpx;padding-bottom:10rpx'>
+
+  <view style='width:50%;text-align:center;font-weight:700' bindtap='bottom'>
+    <text style='padding-bottom:13rpx;{{up_or_bottom=="bottom"?"border-bottom:2px solid #ed1c24 ;color:#ed1c24":""}}'>线下简历</text> </view>
+  <view style='width:50%;text-align:center;font-weight:700' bindtap='up'>
+    <text style='padding-bottom:13rpx;{{up_or_bottom=="up"?"border-bottom:2px solid #ed1c24 ;color:#ed1c24":""}}'>线上简历</text> </view>
+
+</view>
+
+<view style='height:10px' class='bg-gray'></view>
+
+<view class='bg-gray' bindtouchstart="" bindtouchmove=''>
+  <!-- <view class='bg-gray' bindtouchstart="touchstart" bindtouchmove='touchmove'> -->
+
+  <view wx:if="{{up_or_bottom=='up'&& up_list.length==0}}" style='text-align:center'>线上简历为空</view>
+  <view wx:if="{{up_or_bottom=='up'}}" style='height:170rpx;background:#ccc; '  bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd" class='bg-white yinying' wx:for="{{up_list}}" wx:key bindtap="details" data-id='{{item.resume_info_id}}' data-resume_id ="{{item.resume_info_id}}">
+    <!-- <view wx:if="{{up_or_bottom=='up'&& up_list.length==0}}" style='text-align:center'>线上简历为空</view> -->
+
+
+
+    <view class="flex  align-center bg-white">
+
+
+      <view wx:if='{{item.resume_info__face_pic!=null}}' class="cu-avatar xl round margin-left " style="background-image:url({{item.resume_info__face_pic}})"></view>
+      <view wx:else class="cu-avatar xl round margin-left " style="background-image:url({{item.resume_info__sex==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+      <view class="pd" style='height:170rpx'>
+        <!-- <view class='name1 text-black'>
+          <text>{{item.resume_info__user_name}}\t\t</text>
+          <text class='icon-peoplefill  {{item.resume_info__sex==1?"text-blue":"text-pink"}}'>　</text>
+        </view> -->
+
+        <view class='name1 text-black'>
+          <text>{{item.resume_info__user_name}}\t\t</text>
+          <text class='icon-peoplefill {{item.resume_info__sex==1?"text-blue":"text-pink"}}'>　</text>
+          <text wx:if="{{item.resume_status==1}}" class='icon-yihuifu_huabanfuben text-red'></text>
+          <text wx:if="{{item.resume_status==2}}" class='icon-weibiaoti-_huabanfuben text-orange'></text>
+          <text wx:if="{{item.resume_status==3}}" class='icon-weibiaoti-_huaban text-green'></text>
+
+        </view>
+
+        <view class='sm_name text-grey'>
+          <text>{{item.resume_info__age}}岁　</text>
+          <text>{{item.resume_info__edu_background}}　</text>
+          <text>{{item.resume_info__expected_salary}}元</text>
+
+        </view>
+
+        <view class='sm_name text-grey'>
+          <view class='smk_font_qiege2'>期望职位：{{item.jd__position__name}}</view>
+          <!-- <view class='smk_font_qiege2' >期望职位：职位职位职位职位职位职位</view> -->
+        </view>
+
+        <view class='sm_name text-grey'>
+          <text>期望地点：{{item.resume_info__need_place__name}}</text>
+        </view>
+      </view>
+      <view class='time'>{{item.create_date}}</view>
+    </view>
+
+
+  </view>
+
+  <view wx:if="{{up_or_bottom=='bottom'&& offline_data.length==0}}" style='text-align:center'>线下简历为空</view>
+  <view wx:if="{{up_or_bottom=='bottom'}}" style='height:170rpx; ' class='bg-gray yinying' wx:for="{{offline_data}}" bindlongtap="longTap" bindtouchstart="touchStart" bindtouchend="touchEnd"  wx:key data-resume_id ="{{item.resume_info_id}}" >
+
+    <view class='icon-yun text-blue' wx:if='{{item.is_online!=0}}' style='position:absolute;right:30rpx;padding:20rpx;font-size:10px'></view>
+
+    <view class="flex  align-center bg-white" data-id='{{item.resume_info_id}}' bindtap="details">
+
+
+      <view wx:if='{{item.resume_info__face_pic!=null}}' class="cu-avatar xl round margin-left " style="background-image:url({{item.resume_info__face_pic}})"></view>
+      <view wx:else class="cu-avatar xl round margin-left " style="background-image:url({{item.resume_info__sex==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+      <view class="pd" style='height:170rpx'>
+        <view class='name1 text-black'>
+          <text>{{item.resume_info__user_name}}\t\t</text>
+          <text class='icon-peoplefill {{item.resume_info__sex==1?"text-blue":"text-pink"}}'>　</text>
+          <text wx:if="{{item.resume_status==1}}" class='icon-yihuifu_huabanfuben text-red'></text>
+          <text wx:if="{{item.resume_status==2}}" class='icon-weibiaoti-_huabanfuben text-orange'></text>
+          <text wx:if="{{item.resume_status==3}}" class='icon-weibiaoti-_huaban text-green'></text>
+
+
+        </view>
+
+
+
+        <view class='sm_name text-grey'>
+          <text>{{item.resume_info__age}}岁　</text>
+          <text>{{item.resume_info__edu_background}}　</text>
+          <text>{{item.resume_info__expected_salary}}元</text>
+
+        </view>
+
+        <view class='sm_name text-grey'>
+          <text>期望职位：{{item.jd__position__name}}</text>
+        </view>
+
+        <view class='sm_name text-grey'>
+          <text>期望地点：{{item.resume_info__need_place__name}}</text>
+        </view>
+
+
+      </view>
+      <!-- <text class='icon-xianshang' style='position: relative;right:0px' ></text> -->
+      <view class='time'>{{item.create_date}}</view>
+
+    </view>
+
+
+  </view>
+
+  <view style='height:20px' class='bg-gray'></view>
+
+
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>玩命加载中</view>
+</view>

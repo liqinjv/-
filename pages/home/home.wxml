@@ -1,0 +1,281 @@
+<view wx:if="{{is_init}}">
+
+  <view class='cu-custom' style="height:{{CustomBar}}px;">
+    <view class="cu-bar fixed {{theme}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+      <view class='content' style='top:{{StatusBar}}px;font-size:16px'>公司展示</view>
+
+      <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+
+    </view>
+  </view>
+
+
+
+  <view class='main'>
+
+    <swiper class="screen-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+      <swiper-item wx:for="{{index_data.pic_url}}" wx:key>
+        <image src="{{item}}" mode='aspectFill' bindtap='look_image' data-url="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+
+
+
+    <view class="flex solid-bottom padding align-center ">
+      <view class="cu-avatar radius xl bg-white" style="background-size:100% 100%;background-image:url({{index_data.company_info.company_logo}}); background-style='width:50px' ;width:80px;height:80px">
+      </view>
+
+
+      <view class='c'>
+        <text class='z' bindtap='test'>{{index_data.company_info.company_name}}\n</text>
+
+        <view class='z_sm' style='margin-top:15rpx'>{{index_data.company_info.industry__name}}{{index_data.company_info.industry__name?'/':''}}{{index_data.company_info.scale}}{{index_data.company_info.scale?'人':''}}</view>
+      </view>
+    </view>
+
+    <view class=' height'></view>
+
+
+
+    <view>
+      <view class='v'>
+        <text class='b'><text class='icon-title title-color'></text> 　</text>公司介绍
+        <text class='b1'> 　<text class='icon-title title-color'></text></text>
+      </view>
+
+      <view class='n padding'>
+        <text>{{company_introduction}}</text>
+        <!-- <text>{{index_data.company_info.company_introduction}}</text> -->
+      </view>
+      <!-- 添加视频 -->
+      <view style='padding-top:30rpx;padding-bottom:30rpx' wx:for="{{index_data.video_url}}" wx:key>
+
+        <video src='{{item}}' autoplay loop muted="{{muted}}" show-play-btn="{{false}}" controls="{{false}}" objectFit="cover">
+          <cover-view bindtap='jingyin' class='muted {{muted==false?"icon-notificationfill":"icon-notificationforbidfill"}} '></cover-view>
+        </video>
+      </view>
+
+      <view style='text-align:center;margin-bottom:10px'>
+        <!-- <text class='icon-unfold'></text> -->
+      </view>
+    </view>
+
+    <!-- 风云人物 -->
+    <view class=' height'></view>
+
+
+
+    <view class='v'>
+      <text class='b'><text class='icon-title title-color'></text> 　</text>风云人物
+      <text class='b1'> 　<text class='icon-title title-color'></text></text>
+    </view>
+
+    <view class="padding" style='text-align:center;' bindtap='show_detail'>
+      <view>
+        <view class="flex justify-center">
+          <view class="cu-avatar xl round " style="background-image:url({{index_data.company_info.manager_pic}});"></view>
+          <text class='name'> {{index_data.company_info.manager_name}}\n{{index_data.company_info.manager_tag}}</text>
+
+        </view>
+
+
+      </view>
+
+    </view>
+
+
+    <view class=' height'></view>
+    <!-- 产品介绍 -->
+    <view class='v'>
+      <text class='b'><text class='icon-title title-color'></text> 　</text>团队风采
+      <text class='b1'> 　<text class='icon-title title-color'></text></text>
+    </view>
+    <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-color="#8799a3" indicator-active-color="#0081ff">
+      <swiper-item wx:for="{{index_data.company_product_pic_url}}" wx:key class="{{cardCur==index?'cur':''}}">
+        <view class='bg-img shadow-blur' style="background-image:url({{item}})" bindtap='look_image' data-url='{{item}}'></view>
+      </swiper-item>
+    </swiper>
+
+
+
+
+    <view class=' height'></view>
+
+
+
+    <!-- 公司地址 -->
+    <view class='v'>
+      <text class='b'><text class='icon-title'></text> 　</text>公司地址
+      <text class='b1'> 　<text class='icon-title'></text></text>
+    </view>
+
+
+    <view>
+
+      <view class="flex align-center" bindtap='click_map'>
+
+
+        <view class="flex  padding-xl align-start">
+          <text class='icon-locationfill text-red' style='font-size:14px;padding-top:3px;margin-right:10px'></text>
+          <view>
+            <view>
+              <text style='font-size:15px'>{{index_data.company_info.city__name}}\n</text>
+              <text class='text-grey'>{{index_data.company_info.company_address}}</text>
+
+            </view>
+
+
+
+          </view>
+        </view>
+
+        <text class='icon-right text-red' style='position:relative;right:-200rpx'></text>
+      </view>
+
+      <map bindtap='click_map' longitude='{{longitude}}' latitude='{{latitude}}' covers='{{covers}}' style='width:100%;height:400rpx'></map>
+
+
+
+    </view>
+
+    <!-- 分享功能 -->
+    <!-- <view class='bt'>
+<text class='icon-share'></text>
+分享
+</view> -->
+
+
+
+
+    <view class="cu-modal {{modalName=='Image'?'show':''}}">
+
+
+
+      <view class="cu-dialog" style='width:600rpx;height:40%'>
+        <view class="bg-img" style="height:450px;">
+          <text bindtap='close_detail' class='icon-close text-red' style='position:absolute;right:10px;top:10px;font-size:16px'></text>
+          <view class="flex  padding align-center">
+            <view class="cu-avatar lg round  avatar_padding" style="background-image:url({{index_data.company_info.manager_pic}});"></view>
+            <view style='padding-left:15px;font-weight:400'>{{index_data.company_info.manager_name}}
+              <text style='font-size:12px;font-weight:300'>\n{{index_data.company_info.manager_tag}}</text> </view>
+          </view>
+
+          <view class='padding-left-right' style='text-align:left;height:auto'>
+            <text style='font-size:12px' class='text-grey '>{{manager_background}}
+
+      </text>
+          </view>
+
+
+        </view>
+
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+
+    <view class='v'>
+      <text class='b'><text class='icon-title title-color'></text> 　</text>在招职位
+      <text class='b1'> 　<text class='icon-title title-color'></text></text>
+    </view>
+
+
+    <view class=" cf padding-sm " style='border-bottom: 1px solid rgb(240, 240, 240);' wx:for="{{index_data.company_jd}}" wx:key bindtap='nav_position_detail' data-data='{{item}}'>
+      <view class=' radius fl  '>
+        <view class='jobname_title ' style='font-size:16px;padding-bottom:8rpx;margin-bottom:5rpx'>{{item.jd_title}}</view>
+
+
+        <view class='cu-tag round text-grey' style='font-size:10px'>{{index_data.company_info.city__name}}</view>
+        <view class='cu-tag round text-grey' style='font-size:10px'>{{item.edu_background=='不限'?'学历不限':item.edu_background}}</view>
+        <view class='cu-tag round text-grey' style='font-size:10px'>{{item.exp=='不限'?'经验不限':item.exp}}</view>
+
+      </view>
+
+      <view class='radius fr '>
+        <view class='jobname_title text-red'>{{item.salary}}元</view>
+        <view class='jobname text-grey' style='font-size:10px;padding-top:15rpx;padding-bottom:8rpx;float:right;margin-top:17rpx'>{{item.create_date}}</view>
+      </view>
+    </view>
+
+
+    <view wx:if='{{index_data.company_jd.length==0}}' style='text-align:center;font-size:12px;padding-top:20rpx' class='text-gray' > 您还没有发布职位，去招骋工具中发布吧</view>
+
+
+  </view>
+
+
+
+
+
+  <view class='box tab' wx:if="{{no_hr}}">
+    <view class="cu-bar tabbar bg-white">
+      <view class="action">
+        <view class='icon-cu-image'>
+          <image src='/imgs/tabbar/home.png'></image>
+        </view>
+        <view class='text-orange'>公司展示</view>
+      </view>
+
+      <view class="action" bindtap='user'>
+        <view class='icon-cu-image'>
+          <image src='/imgs/tabbar/user1.png'></image>
+        </view>
+        <view class='text-black'>我的</view>
+      </view>
+
+
+    </view>
+  </view>
+
+
+  <view class='cu-load load-modal' wx:if="{{loadModal}}">
+    <!-- <view class='icon-emojifill text-orange'></view> -->
+    <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+    <view class='gray-text text-grey'>正在登录...</view>
+  </view>
+
+
+
+
+</view>
+
+<view wx:else>
+
+  <view>
+
+    <image style='width:100%;height:99.6vh' src="https://www.hr24.com.cn/static/init.png"></image>
+
+  </view>
+  <view style='text-align:center'>
+    <text wx:if="{{is_init==false}}" class="icon-loading2  iconfont-spin load"></text>
+    <text wx:else class="load2">网络异常</text>
+  </view>
+
+
+
+
+
+
+</view>
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在加载..</view>
+</view>
+
+
+<!-- <view style='position:fixed;right:30rpx;border-radius:20px;height:60rpx' class='bg-red  '>
+  <text class='icon-huidaodingbu text-white' style='font-size:20px'></text>
+  <text class=' text-white' style='font-size:16px'>去投递</text>
+</view> -->
+
+<!-- <view class=' round lg bg-red' id='j_page' style='position:fixed;right:20rpx;bottom:130rpx;width:20%;border-radius:20px;height:60rpx;line-height:60rpx;text-align:center' bindtap='di'>
+  <text class='icon-huidaodingbu'></text> 去投递
+</view> -->

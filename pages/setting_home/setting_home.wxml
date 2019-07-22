@@ -1,0 +1,267 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;返回</text>
+
+  </view>
+</view>
+
+<view class='padding'>
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司展示图片(2-5张)
+    </view>
+  </view>
+
+  <view class="cu-form-group ">
+    <view class="grid col-3 grid-square flex-sub">
+
+      <!-- <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+    </view> -->
+      <view wx:for="{{img1}}" class="padding-xs bg-img" style="background-image:url({{item}});" wx:key='index'>
+        <view class="cu-tag bg-red" bindtap='remove_img' data-index='{{index}}'>
+          <text class='icon-close'></text>
+        </view>
+      </view>
+
+      <view class="padding-xs solids" bindtap='get_phone_image' wx:if='{{img1.length<5}}'>
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司logo(1张)
+    </view>
+  </view>
+
+
+  <view class="cu-form-group ">
+    <view class="grid col-3 grid-square flex-sub">
+
+      <!-- <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+    </view> -->
+      <view wx:for="{{logo}}" class="padding-xs bg-img" style="background-image:url({{item}});" wx:key='index'>
+        <view class="cu-tag bg-red" bindtap='logo_img_remove' data-index='{{index}}'>
+          <text class='icon-close'></text>
+        </view>
+      </view>
+
+      <view class="padding-xs solids" bindtap='logo_img' wx:if="{{logo.length==0}}">
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司全称
+      <!-- <text class='tishi'>{{jieshao_num}}/300</text> -->
+
+    </view>
+  </view>
+  <view class="cu-form-group top ">
+
+    <textarea placeholder="填写公司名称" value='{{company_name}}' maxlength="200" placeholder-class='placeholder' style='height:50px' bindinput='gongsi_input'></textarea>
+  </view>
+
+
+
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司规模
+      <!-- <text class='tishi'>{{jieshao_num}}/300</text> -->
+
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <input placeholder="例：10" maxlength='10' value='{{guimo_1}}' class='radius' bindinput='guimo_1' style='width:30px' type='number'></input>
+
+    <view class='title' style='margin-right:10px'>人</view>
+    <view style='margin-left:30px;margin-right:30px'> — </view>
+
+
+    <input placeholder="例：20" maxlength='10' value='{{guimo_2}}' class='radius' bindinput='guimo_2' type='number'></input>
+
+    <view class='title' style=';margin-right:30px'>人</view>
+  </view>
+
+
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司所属行业
+      <!-- <text class='tishi'>{{jieshao_num}}/300</text> -->
+
+    </view>
+  </view>
+  <view class="cu-form-group" bindtap='industry_id'>
+    <view class='title' style='margin-right:10px' value='{{industry_id}}'>{{industry_id==''?"点击选择公司所在的行业":industry_id}}</view>
+
+  </view>
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司介绍
+      <text class='tishi'>{{jieshao_num}}/300</text>
+
+    </view>
+  </view>
+
+  <view class="cu-form-group top he">
+
+    <textarea placeholder="200-300字" value='{{jieshao}}' maxlength="300" placeholder-class='placeholder' style='height:130px' bindinput='jieshao_input'></textarea>
+  </view>
+
+
+
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>公司地址
+    </view>
+  </view>
+
+  <view class="bg-white" style='padding-left:30rpx'>
+    <!-- <view class='title text-grey' style='font-size:14px'>点击右侧选择地址</view> -->
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker" style='padding-right:20%'>
+        {{region[0]}} - {{region[1]}} - {{region[2]}}
+        <text class='icon-right' style='padding-left:50rpx'></text>
+
+      </view>
+    </picker>
+
+  </view>
+  <view class="cu-form-group top">
+
+    <textarea placeholder="更详情信息请精确到街道，用于定位公司位置" value='{{dizhi}}' maxlength="200" placeholder-class='placeholder' bindinput='city_input'></textarea>
+  </view>
+
+
+
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>风云人物(1张)
+    </view>
+  </view>
+
+
+  <view class="cu-form-group ">
+    <view class="grid col-3 grid-square flex-sub">
+
+      <!-- <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+    </view> -->
+      <view wx:for="{{fengyun}}" class="padding-xs bg-img" style="background-image:url({{item}});" wx:key='index'>
+        <view class="cu-tag bg-red" bindtap='fengyun_img_remove' data-index='{{index}}'>
+          <text class='icon-close'></text>
+        </view>
+      </view>
+
+      <view class="padding-xs solids" bindtap='fengyun_img' wx:if="{{fengyun.length==0}}">
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class='title'>姓名</view>
+    <input placeholder="风云人物姓名" class='radius' value='{{fengyun_name}}' bindinput='fenyun_name_input'></input>
+  </view>
+
+
+  <view class="cu-form-group">
+    <view class='title'>职位</view>
+    <input placeholder="风云人物职位" class='radius' value='{{fengyun_position}}' bindinput='fenyun_zhiwei_input'></input>
+  </view>
+
+  <view class="cu-form-group top he2 padding">
+
+    <view class='title'>
+      <text>介绍</text>
+
+    </view>
+
+
+    <textarea placeholder="20-100字" maxlength="100" value='{{fengyun_detail}}' placeholder-class='placeholder' bindinput='fengyun_text_input' style='height:100px'></textarea>
+
+  </view>
+
+  <text class='tishi2'>{{fengyun_num}}/100</text>
+
+
+
+
+
+
+
+  <view class="cu-bar margin-top bg-white">
+    <view class='action'>
+      <text class='icon-title text-orange'></text>团队风采图片(2-5张)
+    </view>
+  </view>
+
+
+
+  <view class="cu-form-group ">
+    <view class="grid col-3 grid-square flex-sub">
+
+      <!-- <view class="padding-xs bg-img" style="background-image:url(https://image.weilanwl.com/img/square-1.jpg);">
+    </view> -->
+      <view wx:for="{{team}}" class="padding-xs bg-img" style="background-image:url({{item}});" wx:key='index'>
+        <view class="cu-tag bg-red" bindtap='remove_team_img' data-index='{{index}}'>
+          <text class='icon-close'></text>
+        </view>
+      </view>
+
+      <view class="padding-xs solids" bindtap='get_team_image' wx:if='{{team.length<5}}'>
+        <text class='icon-cameraadd'></text>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class="padding flex flex-direction">
+    <button class='cu-btn bg-orange margin-tb-sm lg' bindtap='save' style='height:85rpx'>保存信息</button>
+  </view>
+</view>
+
+
+<!-- <button bindtap='nav_hangye'>请求图片</button> -->
+
+
+<!-- <view class="cu-modal {{hangye?'show':''}} ">
+  <view class="cu-dialog ">
+    <view class="cu-bar bg-white justify-end">
+      <view class='content'>所在行业选择</view>
+      <view class='action' bindtap='hideModal'>
+        <text class='icon-close text-red'></text>
+      </view>
+    </view>
+    <view class=' '>
+      <button wx:for='{{hangye_key}}' style='margin-right:10rpx;margin-bottom:10rpx' class='cu-btn round sm'>{{hangye_key[index]}}</button>
+
+    </view>
+  </view>
+</view> -->
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>玩命上传中</view>
+</view>
+
+

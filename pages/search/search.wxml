@@ -1,0 +1,75 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white " style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;简历搜索</text>
+  </view>
+</view>
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class='search-form round'>
+    <text class="icon-search"></text>
+    <input type="text" placeholder="输入关键字搜索" confirm-type="search" bindinput='input'  bindconfirm='search'></input>
+  </view>
+  <view style='padding-right:20rpx' bindtap='search' >搜索</view>
+
+</view>
+
+<view style='height:120rpx'></view>
+
+<!-- <view class="cu-bar bg-gray search " style='margin-left:3%;margin-right:3%'>
+  <view bindtap='resume_ku'>
+    <text class='icon-homefill text-orange' style='font-size:24px'>  <text class='text-grey' style='font-size:12px;position:relative;bottom:5rpx'>简历库</text> </text>
+    <text class='icon-qian-  text-orange' style='font-size:18px;margin-left:20rpx;position:relative;bottom:3rpx'>  <text class='text-grey' style='font-size:12px;position:relative;bottom:5rpx'>{{user_info.user_point}}</text> </text>
+  </view>
+  <view class='search-form round '>
+    <text class="icon-search "></text>
+    <input type="text" placeholder="关键字搜索" confirm-type="search" bindinput='searchIcon' 	></input>
+  </view>
+</view> -->
+
+<view style='height:170rpx;background:#ccc;margin-top:20rpx ' class='bg-white yinying ' wx:for="{{is_search?search_data_list:resume_list}}" wx:key>
+  <view class="flex  align-center bg-white" bindtap="details" data-resume_id='{{item.id}}' data-source_resume_id='{{item.source_resume_id}}' data-status='{{item.resume_status}}'>
+
+    <view wx:if="{{item.pic_url!=''&&item.pic_url!=null}}" class="cu-avatar xl round margin-left " style="background-image:url({{item.pic_url}});"></view>
+    <view wx:else class="cu-avatar xl round margin-left " style="background-image:url({{item.sex_id==1?'https://www.hr24.com.cn/static/man.png':'https://www.hr24.com.cn/static/girl.png'}});"></view>
+    <view class="pd" style='height:170rpx'>
+      <view class='name1 text-black'>
+        <text>{{item.user_name}}\t\t</text>
+        <text style='margin-bottom:4rpx' wx:if="{{item.sex_id==1}}" class='icon-peoplefill text-blue'></text>
+        <text style='margin-bottom:4rpx' wx:else class='icon-peoplefill text-pink'></text>
+      </view>
+
+      <view class='sm_name text-grey'>
+        <text>{{item.age}}岁　</text>
+        <text>{{item.edu_background}}　</text>
+        <text>{{item.expected_salary=='0'?'面议':item.expected_salary}}</text>
+
+      </view>
+
+      <view class='sm_name text-grey smk_font_qiege'>
+        <text class=''>期望职位：{{item.position_content}}</text>
+      </view>
+
+      <view class='sm_name text-grey smk_font_qiege'>
+        <text>期望地点：{{item.place_content}}</text>
+      </view>
+
+
+    </view>
+
+  </view>
+
+
+
+</view>
+
+<!-- 上拉刷新转圈 -->
+<view style='text-align:center' wx:if="{{search_jiazai}}">
+  <text class='icon-loading2 iconfont-spin'></text> </view>
+
+
+
+<view style='text-align:center;margin-top:20%' class='padding-xl' wx:if="{{search_list_length}}">
+ <text class='text-grey' >暂时没有搜索到与您关键词匹配的简历\n输入别的试试看吧</text>
+</view>

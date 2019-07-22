@@ -1,0 +1,189 @@
+/* pages/search/search.wxss */
+page{
+  background: #ffff
+}
+
+.searchs{
+  background:white;width:90%;height:30px;border-radius:40px 40px 40px 40px; padding-left:130rpx;margin-left:5%;margin-top:100px;
+}
+
+
+.pd{
+  padding-left: 50rpx;
+  padding-top:10rpx;
+  padding-bottom: 10rpx;
+    
+
+}
+
+.name1{
+  font-size:16px;
+  line-height: 24px
+}
+
+
+.name{
+  font-size:16px;
+  line-height: 17px
+}
+
+.sm_name{
+  font-size:12px;
+  line-height: 17px
+ 
+}
+
+
+.yinying{
+  width:94%;
+  margin-left: 3%;
+  
+  margin-bottom: 3%;
+  -moz-box-shadow:3px 3px 3px #eaeaea;
+  -webkit-box-shadow:3px 3px 3px #eaeaea;
+  box-shadow:3px 3px 3px #eaeaea;
+
+  border-top: 1px solid #f3f3f3;
+  border-left: 1px solid #f3f3f3;
+
+
+
+}
+
+
+.icon-back{
+  font-size:20px
+}
+
+.top_position{
+  position: relative;
+  top: 0rpx;
+  height: rpx;
+
+}
+
+
+.dian{
+  position: absolute;
+  left:33rpx;
+  margin-top:30rpx;
+  margin-left:20rpx;
+  padding-right:23rpx;
+
+
+}
+.dian2{
+  padding-right:23rpx;
+  margin-left:30rpx;
+
+}
+.yuan {
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 50px; /* 圆形边缘弧度 */
+  width: 90rpx; /* 宽度 */
+  height: 90rpx; /* 高度 *//* background-color: red; */
+  position: fixed;
+  right: 30rpx;
+  top: 1000rpx;
+  /* border: 1px solid #a5a5a5; */
+  margin-bottom: 3%;
+-moz-box-shadow:2px 2px 2px #bdbbbb;
+  -webkit-box-shadow:2px 2px 2px #bdbbbb;
+  box-shadow:2px 2px 2px #bdbbbb;
+}
+
+.jiazai2{
+  position: fixed;
+  top:20rpx;
+  
+}
+
+
+
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 750rpx
+ 
+
+}
+
+
+.wx{
+  border-radius:4px;
+  background:#197b31;
+  color:#fff;
+  height: 70rpx;
+  width: 350rpx;
+  margin: 20rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+.topSec{
+  display: flex;
+  justify-content: space-around
+}
+
+.phone{
+  border-radius:4px;
+  background:#e6e6e6;
+  color:#707070;
+  height: 70rpx;
+  width:350rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+
+.center{
+  text-align: center
+}
+
+.login_title{
+  padding-top:50rpx;
+  font-size:16px
+}
+
+.cu-dialog{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 550rpx;
+  height:320rpx;
+  max-width: 100%;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  overflow: hidden
+  }
+
+
+.cu-btn.lg {
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  height: 70rpx;
+  width: 400rpx
+}
+
+
+.margin-tb-sm {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.margin-tb-sms {
+  margin-top: 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.bg-green {
+  background-color: #358a40;
+  color: #fff;
+}

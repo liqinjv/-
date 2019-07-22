@@ -1,0 +1,120 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'>职位详情</view>
+    <text class='icon-back' style='margin-left:20px;font-size:14px;' bindtap='back' decode='true'>&nbsp;去企业版</text>
+  </view>
+</view>
+
+
+
+<view class='bt padding bg-white'>
+  <text style='font-size:20px;line-height:30px'>{{data.jd_title}}\n</text>
+
+  <text class='sm_name text-orange' style='font-size:16px'>{{data.salary}}元</text>
+  <text class='sm_name'>{{data.city__name}}</text>
+
+  <view class='padding-sms'>
+    <view class='cu-tag round' style='font-size:12px'>工作经验:{{data.exp}}</view>
+    <view class='cu-tag round' style='font-size:12px;margin-left:20px'>\t\t学历要求:{{data.edu_background}}</view>
+
+  </view>
+
+
+
+
+  <text style="line-height:30px;font-size:14px" class='text-gray'>职位诱惑：{{data.jd_tag}}</text>
+  <view>
+    <text style="line-height:20px;font-size:14px" class='text-gray'>岗位类别：{{data.position__name}}</text>
+  </view>
+
+
+
+</view>
+
+
+<!-- 地址 -->
+<view class='bg-white left padding bt' bindtap='click_map'>
+  <text class='icon-locationfill text-red'></text> {{data.company__city__name}}{{data.company__company_address}}
+  <text class='icon-right' style='float:right;margin-top:4px;font-size:10px;bg-grey'></text> </view>
+
+<view class=' height'></view>
+
+
+<!-- 职位描述 -->
+<view class='bg-white  padding'>
+  <view class='v center'>
+    <text class='b'><text class='icon-title title-color'></text> 　</text>职位描述
+    <text class='b1'> 　<text class='icon-title title-color'></text></text>
+    <view class='b1'></view>
+  </view>
+
+  <text>{{data.position_content}}</text>
+
+
+</view>
+
+
+<view class=' height'></view>
+
+<!-- 就职要求 -->
+<!-- <view class='bg-white  padding'>
+  <view class='v center'><text class='b'><text class='icon-title title-color'></text> 　</text>任职要求<text class='b1'> 　<text class='icon-title title-color'></text></text></view>
+
+  <text>{{qualifications}}</text>
+
+
+ </view>
+
+
+ <view class=' height' ></view> -->
+
+
+<view class='bg-white'>
+  <view class='center padding'>
+    <view class='v'>
+      <text class='b'><text class='icon-title title-color'></text> 　</text>职位发布者
+      <text class='b1'> 　<text class='icon-title title-color'></text></text>
+    </view>
+
+  </view>
+
+  <view class='flex  padding align-center' style='margin-bottom:50px'>
+
+    <view class="cu-avatar lg round margin-left" style="background-image:url({{data.company__company_logo}});">
+    </view>
+
+    <view>
+      <text class='m_name padding'>{{data.company__company_name}}\n</text>
+
+      <text class='sm_name padding icon-lightfill text-red'> <text class='text-grey'>\t\t最近活跃时间：2分钟前</text></text>
+      <!-- <view class='text_s left bg-white '>#简历处理神速　#回复及时　#全天活跃</view> -->
+
+    </view>
+
+  </view>
+
+</view>
+
+
+
+<view >
+  <view style='  height: 40px;width:80px;position:fixed;bottom:10rpx;left:20rpx;text-align:center' bindtap='go_jingying'>
+    <text class='icon-homefill text-red' style='font-size:20px'>\n</text>
+    <text style='font-size:12px'>首页</text>
+  </view>
+
+
+
+  <view style='  height: 40px;line-height:40px;width:70vw;position:fixed;bottom:10rpx;right:20px;text-align:center' class='bg-red' bindtap='toudi_resume'>
+    去投递
+  </view>
+
+</view>
+
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <!-- <view class='icon-emojifill text-orange'></view> -->
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在加载..</view>
+</view>

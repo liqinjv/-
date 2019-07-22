@@ -1,0 +1,141 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed {{theme}}" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>推广互动</view>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+
+<view class=" padding">
+  <button bindtap="select" data-num='0' class=' margin_left_right padding cu-btn round   shadow {{select==0?"border text-orange":"line-grey bordersize-orange "}} '>
+    <text class='icon-share' decode='true'>&nbsp;\t</text>分享海报</button>
+
+  <button bindtap="select" data-num='1' class='margin_left_right padding cu-btn round {{select==1?"border text-orange":"line-grey bordersize-orange "}} shadow'>
+    <text class='icon-camera' decode='true'>&nbsp;\t</text>短视频</button>
+
+  <button bindtap="select" data-num='2' class='margin_left_right padding cu-btn round {{select==2?"border text-orange":"line-grey bordersize-orange "}} shadow'>
+    <text class='icon-weixin' decode='true'>&nbsp;\t</text>微信推广</button>
+
+
+  <!-- <view class="grid col-3  text-center"  >
+        <view bindtap='select' data-num='0' class=" padding {{select==0?'text-red bg-white':'bg-grey text-black'}}"  > <text class='icon-group_fill' style='font-size:20px; border-radius:50px'></text><text decode='true'>&nbsp;&nbsp;分享海报</text> </view>
+        <view bindtap='select' data-num='1' class=" padding {{select==1?'text-red bg-white':'bg-grey text-black'}} "  > <text class='icon-cameraaddfill' style='font-size:20px'></text><text decode='true'>&nbsp;&nbsp;短视频</text> </view>
+        <view bindtap='select' data-num='2'  class=" padding {{select==2?'text-red bg-white':'bg-grey text-black'}} "  ><text class='icon-weixin' style='font-size:20px'></text><text decode='true'>&nbsp;&nbsp;微信推广</text> </view>
+
+    </view> -->
+
+</view>
+
+
+
+<!-- <view style='' class='bg-gray' wx:if="{{select==0}}" wx:for="{{url_list}}" wx:key>
+  
+
+  <view class="flex hb_">
+    
+      <image src="{{item.poster_url}}" mode="widthFix" bindtap='look_image' data-url="{{item.poster_url}}">
+      </image>
+    
+  </view>
+
+</view>
+ -->
+<view style='padding-left:150rpx;padding-right:150rpx;padding-top:150rpx'>
+  <view class=" margin-top  bg-gray" style='text-align:center;height:100rpx;line-height:100rpx {{index?";border-top:1px solid #F4A460;border-bottom:1px solid #F4A460":";border-top:1px solid #ccc;border-bottom:1px solid #ccc"}}'>
+
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index?picker[index]:'点击选择职位'}}
+      </view>
+    </picker>
+
+  </view>
+
+
+</view>
+
+
+<!-- <view style='padding-left:150rpx;padding-right:150rpx;'>
+  <view class=" margin-top  bg-gray" style='text-align:center;height:100rpx;line-height:100rpx {{index?";border-top:1px solid #F4A460;border-bottom:1px solid #F4A460":";border-top:1px solid #ccc;border-bottom:1px solid #ccc"}}'>
+
+    <picker bindchange="PickerChange2" value="{{index2}}" range="{{picker2}}">
+      <view class="picker">
+        {{index2?picker2[index2]:'点击选择风格'}}
+      </view>
+    </picker>
+
+  </view>
+
+
+</view> -->
+
+
+
+
+<!-- <view style='height:150rpx'></view> -->
+<!-- <poster 
+  drawing='{{drawing}}' 
+  savebtnText='{{savebtnText}}'
+
+  canvas-style='canvas-style' 
+  savebtn-style='savebtn-style'
+  bindcompleted='completed'
+  bindsaveImage='saveImage'
+
+/> -->
+
+<!-- <view class="bg-gray padding">
+  <view class="grid col-3 margin-bottom text-center " style='height:200px'>
+
+    <view class="bg-img  padding " style="background-image: url('https://www.hr24.com.cn/static/images/xcx/haibao1.jpg')"></view>
+    <view class="bg-img  padding" style="background-image: url('https://www.hr24.com.cn/static/images/xcx/haibao2.jpg');"></view>
+    <view class="bg-img  padding" style="background-image: url('https://www.hr24.com.cn/static/images/xcx/haibao3.jpg')"></view>
+
+
+    
+  </view>
+</view> -->
+
+<view style='height:10rpx'></view>
+
+<view style='padding:100rpx;text-align:center'>
+  <button class="cu-btn {{index?'bg-red':'bg-grey'}} lg" role="button" aria-disabled="false" style='width:80%;height:70rpx;font-size:14px' bindtap='{{index?"eventDraw":""}}'>点击生成朋友圈分享图</button>
+</view>
+
+<view class="container">
+  <!-- <image src="{{shareImage}}" class="share-image" ></image> -->
+  <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage" />
+
+  <!-- <button bind:tap="eventDraw">点击生成朋友圈分享图</button> -->
+  <!-- <button bind:tap="eventSave">保存到本地</button> -->
+</view>
+
+
+
+
+
+<view style='height:300px' class='bg-gray' wx:if="{{select==1}}">11</view>
+
+
+<view style='height:300px' class='bg-gray' wx:if="{{select==2}}">22</view>
+
+
+
+
+<view class="cu-modal {{user_shouquan?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar text-grey justify-end">
+      <view class='content'>授权请求</view>
+      
+    </view>
+    <view class='padding2 text-grey'>
+      <text> <text style='font-size:18px;font-weight:500' class='text-black'>24猎</text> 获取您的 <text  style='font-size:15px;font-weight:500' class='text-black'>微信名称与头像</text> ,\n不授权该功能可能无法使用</text>
+      
+      <view style='height:20px;'></view>
+      <button class='bg-green ' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"  >确认授权</button>
+      <view style='height:20px;'></view>
+    </view>
+  </view>
+  
+
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "canvasdrawer": "/canvasdrawer/canvasdrawer"
+  },
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

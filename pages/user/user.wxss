@@ -1,0 +1,204 @@
+@import "/pages/my_resume/my_resume";
+
+.gif-black{  
+  mix-blend-mode: screen;  
+}
+
+.user-img{
+  position :fixed;
+  top:10px;
+  z-index: 100
+
+}
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 750rpx
+ 
+
+}
+
+
+.wx{
+  border-radius:4px;
+  background:#197b31;
+  color:#fff;
+  height: 70rpx;
+  width: 350rpx;
+  margin: 20rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+
+.phone{
+  border-radius:4px;
+  background:#e6e6e6;
+  color:#707070;
+  height: 70rpx;
+  width:350rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+
+.center{
+  text-align: center
+}
+
+.login_title{
+  padding-top:50rpx;
+  font-size:16px
+}
+
+.cu-dialog{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 550rpx;
+  height:320rpx;
+  max-width: 100%;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  overflow: hidden
+  }
+
+
+.cu-btn.lg {
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  height: 70rpx;
+  width: 400rpx
+}
+
+
+.margin-tb-sm {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.margin-tb-sms {
+  margin-top: 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.bg-green {
+  background-color: #358a40;
+  color: #fff;
+}
+
+
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1555898780214'); /* IE9 */
+  src: url('iconfont.eot?t=1555898780214#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQgAAsAAAAACLwAAAPRAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEfIQmATYCJAMQCwoABCAFhG0HRBuUB8geh7FjelMXpiL/IXig96w3mWmbTVbw18lfotIDpd7/3OZIaLTj0TW6JM+Tm9jt/d2QEnidFCiZFmmAAJn5/3PMdPk8Pb/N5pLROtobbjZKoAF1XKfwHdA533I449V5PgRgECmdKFPucJbKKLRZAhDt23imVI5pUSU4ga6w52xUiInY0LVR2lkwwf198Yalg4ZNol2ocsulI02eO148k5bLor60sPozA8w2kEA6UCBa51qbovrRdBJD+huNQqCjo8Fzx/PaL565XMBfi1TXbaC1/ucJO5rUHbD5ErljPJMBDZ7XZkDCi2f8E5AqPF0HvIDzEAJhww+wo7D5GEaQm5u3clMe/gH6k/pdv17z6tXq167VGHMiqUbN342m01c715hjVlkra/jOmmMSqoysfvseM8ckzRc3btSk0kbvXrCm+nKVQz17P/etF8Pt8y4VeOy4EuWYf7mxidFn+X7ngTH7rL213G0e9axVpseYNc7Vhvvold0Mkx1fYS7bF4K1aswaIRZf7+145xxIMiu4jaNXo7PXtTCW7w8VztWjV8Kia2VpSauIfebe+PbmEzfiCheVEEq2Xzepr3CKlZO09jrLvrpThFZc3ji/VrvWwnu3ulgmfOHp3z2c1xN8y+QvviK006kxI8VM7exaOYRKlV6LVqP9wLGxO8aHpUlan7WLijUPeKY8Ukv6z5d1S/xTMWLEMjI+cL9VQy+i17D2d27hjm0xLPN/9H/Hl/YL8wph4JN9/wf859Mgv4/fYVOaaFtrrb8cRLdaPvpWquyyVrp0p97TL03SfSxEtFipVCdrMyWFho1/hVd8GJ2RANd9hYwF12BZXA5Ecu2Xh2Wp32Isk9SY5Y28inzTTSW23HxSaq7rcQ1W1Oe9W57E+wl4NauULNB0SolCk6v4FI14y2ENMHQnuMDp634f9gCEZoHO8gA0HESARCceqbDpYMMkH+zoFAeDNOW3m/jpiopQbkCqYQgE3jaAhicHQOLtHFJh74GNQO/AjncSDGoKvwNNEmtjlO6KJqMDVh8ImlHqGgaueoVH9IrYFFGBS76iyIMAdDKzk4k1pij6WJL39Lrc3QW3KyWwQhfDOCbIulKINjf97pz1Wlkt896oaXdKpCqlESAmDOIAmvICtMGGSHHt5kw19fNHEI+CGBNRUlFivoIIcoL+QY5M2TWQa2laq+JcHtKNOx5d3WFcQEsERAIoh8xIrEcJ0Dl/XAhiwzS1bhHO6MnCtVrWlTbHlydXuAcw0G6ohCakUMKGvVeL4BmkRrfWVIRBuVsTegWWRpIAAAAA') format('woff2'),
+  url('iconfont.woff?t=1555898780214') format('woff'),
+  url('iconfont.ttf?t=1555898780214') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1555898780214#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before {
+  content: "\e7e5";
+}
+
+.icon-shouji:before {
+  content: "\e607";
+}
+
+.icon-saoyisao:before {
+  content: "\e658";
+}
+
+
+
+
+
+.padding1{
+  position: absolute;
+  top:66rpx;
+  left:50rpx
+}
+
+.ava{
+  position: absolute;
+  right:40rpx;
+  top:70rpx
+
+}
+
+.title{
+  position: absolute;
+  top:80rpx;
+  font-size:18px;
+  left:40rpx;
+  height: 20rpx;
+}
+
+.title2{
+  position: absolute;
+  top:150rpx;
+  font-size:12px;
+  left:40rpx
+}
+
+.title3{
+
+  position: absolute;
+  top:240rpx;
+  font-size:12px;
+  left:40rpx
+}
+
+
+
+.bianji{
+  position: absolute;
+  top:220rpx;
+  font-size:11px;
+  right:70rpx
+}
+
+
+.tab{
+  position: fixed;
+  bottom:0px;
+  width: 100%;
+  border-top: solid 0.5px #beb6b6
+  
+}
+
+.padding2{
+  padding-left:30rpx;
+  padding-right:30rpx;
+  padding-bottome:30rpx
+}
+
+
+.cu-bar {
+display:flex;
+position:relative;
+align-items:center;
+min-height:80rpx;
+justify-content:space-between;
+}
+
+.padding-xl2 {
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-bottom: 40rpx
+}

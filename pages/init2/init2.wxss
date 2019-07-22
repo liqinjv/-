@@ -1,0 +1,100 @@
+
+
+.v1{
+
+
+height: 90vh;
+width: 100%;
+
+}
+
+.picker{
+    padding: 10rpx;
+    color: #fff;
+    text-align: center;
+    opacity:1;
+}
+
+button{
+  color:#000000;
+  margin-bottom: 30rpx;
+    border-radius: 98rpx; 
+    width: 600rpx;
+    font-weight:bold;
+    font-size: 14px;
+    background-color: #ffffff;
+    border: 0.8px solid rgb(255, 136, 0);
+    -moz-box-shadow:3px 3px 10px #ffc375; -webkit-box-shadow:3px 3px 10px #ffc375; box-shadow:3px 3px 10px #ffc375;
+    height: 7vh;
+    line-height: 7vh
+
+
+}
+
+/*登录图片*/
+.login-icon{ 
+ flex: none; 
+ text-align: center
+} 
+.login-img{ 
+ width: 170rpx; 
+ height: 70rpx;
+ padding:10rpx 0 0 0;
+ right:5rpx;
+ top:20rpx
+
+}
+.jindu-img{ 
+ width: 100%; 
+ height: 40rpx;
+ padding:10rpx 0 0 0
+
+}
+
+
+
+
+.section__title{
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 0;
+  font-weight:lighter ;
+  opacity:1;
+  font-size: 14px
+}
+
+.nonext{
+  position:absolute;
+  top:85%;
+  left:10vw;
+  background-color:rgb(255, 255, 255);
+  color: #ff8f00;
+
+  width:35vw
+}
+
+
+.next{
+  position:absolute;
+  color: #ffffff;
+  background-color:#ff8f00;
+  /* border: 0.5px solid rgb(202, 200, 200); */
+  top:85%;
+  right:10vw;
+  width:35vw
+  }
+.kang{
+
+background:rgb(241, 241, 241);
+opacity:1;
+border-radius: 20px;
+width:90vw;
+padding: 10% 0 0 0;
+margin-left:5vw; 
+-moz-box-shadow:4px 4px 10px #969696; -webkit-box-shadow:4px 4px 10px #969696; box-shadow:4px 4px 10px #969696;
+height: 65vh;
+
+
+}
+button::after{ border: none; }
+

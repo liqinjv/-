@@ -1,0 +1,71 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;生成二维码</text>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+
+<!-- <view style='height:100px;text-align:center;font-size:20px' class='padding-xl'>{{swiper_num==0?"简历填写二维码":"分享专用二维码"}}</view> -->
+
+<!-- <view class=' yuan padding'> -->
+<!-- <swiper class="card-swiper bg-white yuan" indicator-dots="true"  next-margin=""	  indicator-color="#8799a3" indicator-active-color="#0081ff" style='height:800rpx; ' bindchange='swiper'>
+  <swiper-item  wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url({{code_img_url}})"></view>
+  </swiper-item>
+  <swiper-item  wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url({{two_code_url}})"></view>
+  </swiper-item>
+</swiper>
+</view> -->
+
+<!-- <view class='margin-xl bg-white padding-xl radius shadow-lg yuan'>
+  <view class='text-center margin-bottom text-lg  text-black' style='font-weight:600' >填写简历二维码</view>
+  <view style='height:300rpx;text-align:center' class=''>
+  <image  style='height:300rpx;width:300rpx' class="" src="{{code_img_url}}" bindtap='look_img' data-url="{{code_img_url}}" />
+  </view>
+  <view style='text-align:center ' class='text-gary padding'></view>
+
+</view>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg yuan'  >
+  <view class='text-center margin-bottom text-lg  text-grey' style='font-weight:600' ></view>
+  <view style='height:300rpx;text-align:center' class=''>
+  <image  style='height:300rpx;width:300rpx' class="" src="{{two_code_url}}" bindtap='look_img' data-url="{{two_code_url}}" />
+  </view>
+  <view style='text-align:center ' class='text-gary padding'>分享专用二维码</view>
+
+</view> -->
+<!-- <button bindtap='sao'>扫一扫</button> -->
+<!-- <radio-group class="block" style='position:fixed;bottom:0px;width:100%' >
+
+  <view class="cu-form-group">
+    
+    <view style='padding-left:40%'>
+      <radio class='blue radio'></radio>
+      <radio class='red margin-left-xl'></radio>
+    </view>
+  </view>
+</radio-group> -->
+
+<view style='height:200rpx'></view>
+
+
+<view style='text-align:center'>
+  <view class=' bg-white padding-xl radius shadow-lg yuan' style='width:80%;margin-left:10%;'>
+    <view class='text-center margin-bottom text-lg  text-black' style='font-weight:600'>{{swiper_num==0?'简历填写二维码':'分享专用二维码'}}</view>
+    <view style='height:40rpx'></view>
+    <view style='height:300rpx;text-align:center' class=''>
+      <image style='height:300rpx;width:300rpx' class="" src="{{swiper_num==0?code_img_url:two_code_url}}" bindtap='look_img' data-url="{{swiper_num==0?code_img_url:two_code_url}}" />
+    </view>
+    <view style='text-align:center ' class='text-gary padding'></view>
+
+
+  </view>
+</view>
+
+
+<button class="cu-btn block bg-blue margin-tb-sm lg" role="button" aria-disabled="false" style='height:90rpx;position:fixed;bottom:50rpx;right:30rpx ' bindtap='qiehuan'>
+  <text class=" iconfont-spin"></text>点击切换二维码
+</button>

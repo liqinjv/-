@@ -1,0 +1,31 @@
+<!--pages/generate _poster/generate _poster.wxml-->
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gray" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;font-size:16px'></view>
+    <text class='icon-back' style='margin-left:20px;font-size:16px' bindtap='back' decode='true'>&nbsp;生成海报</text>
+    <!-- <text class='icon-back' style='margin-left:20px;font-weight:800;' bindtap='back'></text> -->
+  </view>
+</view>
+
+<!-- <poster 
+  drawing='{{drawing}}' 
+  savebtnText='{{savebtnText}}'
+
+  canvas-style='canvas-style' 
+  savebtn-style=''
+  bindcompleted='completed'
+  bindsaveImage='saveImage'
+  
+/> -->
+
+<canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+
+
+<view class='cu-load load-modal' wx:if="{{jiazai}}">
+  <image src='/imgs/init/logo_black.png' class='png' mode='aspectFit'></image>
+  <view class='gray-text text-grey'>正在生成..</view>
+</view> 
+
+
+
+<!-- <view style='font-size:11px;text-align:center;padding-top:20rpx;' class='text-gray ps'>小提示:生成的海报将保存到您的手机相册中</view>

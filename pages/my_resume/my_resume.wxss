@@ -1,0 +1,203 @@
+.name{
+  background:#fff;
+  padding:20px;
+  margin-bottom: 10px
+
+}
+.big_name{
+  font-size: 17px;
+  font-weight:900;
+  line-height: 32px;
+  letter-spacing:0.8px;
+  color:#000
+
+
+}
+
+.name_text{
+  font-size: 12px;
+  line-height: 20px;
+  color: #746f6f
+
+}
+
+
+.icon_bg{
+  font-weight: 500;
+  font-size: 10px;
+  margin-right: 6px
+}
+
+
+.post{
+  position :absolute;
+  right: 5vw;
+  font-size: 14px
+
+}
+
+.title{
+  font-size:15px;
+  color: #746f6f;
+  line-height: 30px;
+  font-weight: 700
+
+}
+
+.title-img{
+  font-size:16px;
+}
+
+.margin-right{
+  margin-right: 15px
+}
+
+.margin-right5{
+  margin-right: 5px
+}
+
+
+.margin-top{
+  line-height: 25px;
+  padding-bottom:10px
+}
+
+
+.font-weight{
+  font-weight: 800
+}
+
+.add_text{
+  font-size: 12px;
+  line-height: 20px;
+  color: #746f6f
+}
+
+.margin-bottom{
+  padding-bottom: 20px;
+
+}
+
+.add{
+  margin-top:10px
+}
+
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 750rpx
+ 
+
+}
+
+
+.bottom{
+   position:fixed;
+   bottom:0;
+   width: 750rpx
+ 
+
+}
+
+
+.wx{
+  border-radius:4px;
+  background:#197b31;
+  color:#fff;
+  height: 70rpx;
+  width: 350rpx;
+  margin: 20rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+
+.phone{
+  border-radius:4px;
+  background:#e6e6e6;
+  color:#707070;
+  height: 70rpx;
+  width:350rpx;
+  line-height: 70rpx;
+  padding-left:40rpx;
+  text-align: left;
+
+}
+
+.center{
+  text-align: center
+}
+
+.login_title{
+  padding-top:50rpx;
+  font-size:16px
+}
+
+.cu-dialog{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  width: 550rpx;
+  height:320rpx;
+  max-width: 100%;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  overflow: hidden
+  }
+
+
+.cu-btn.lg {
+  padding: 0 40rpx;
+  font-size: 28rpx;
+  height: 70rpx;
+  width: 400rpx
+}
+
+
+.margin-tb-sm {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.margin-tb-sms {
+  margin-top: 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.bg-green {
+  background-color: #358a40;
+  color: #fff;
+}
+
+
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1554198353958'); /* IE9 */
+  src: url('iconfont.eot?t=1554198353958#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOkAAsAAAAAB4gAAANVAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCbIJOATYCJAMMCwgABCAFhG0HORuXBsg+QTZkQ3yviKlS9miTHDLwSDvG7M3s3no7H378a+Phv7Fv983MV08rjnn1hCfOJhJnExI1JLFGI1VK0S4aPbGXulJ+INQjUHW4pgN5ZD1DiLliqJKiS4XHzvpe8KIokqj20WgE000nOLPPvGsAGS0wDQC4eA4mcvMEuXkEB3qC+vo3AOt1uWJDL4m+EvT+n8vprcTntyyXOZYf9QKMAwpsjEFrCRdIot4wduVFbCbQNC8Vd6a+tRc5KYxegbguCTrklNIrNaWhLlRLJhbxHHH19IC8Ac/878cPDCeSSmYMvLxVZ0SVn2tPBa0uggTjWcGmkbEHUoirpfZNtmF8D1tNRW5Xn1tVhDRWCACfr/7hVVWRBFFlFLfBDihLJyWwWSS+THjWTTKoghW5BXmBKePXVZWBi8vM2blv51zuf3u7fHk9fX0zb3ieMPe/f7ftPj9/wXXDPXe2L3T3b4hr0rJ34NZT19LL+N5CstbfP3Kh97TOI2efdLv5hIlDb56/80fKw5/WFTXvnn48/2TDo7mHA272nROcXb5+adsEN4/PXjZmk+PuP8+FNJ3W5gZvDtQKm4QPZ8JqPfxYGLuMords/w2HkJePTm4veSNdROXseG1GzPWZCof7ceBkQhq/eKz8mv9Y0miyo9O/Vf7fhZBjmPxzb67PqdSpb+6xAn5bWE7/H7o8OcfgEh/sN4TthbwMk3KF7cz/+Y3OZeuQxrP0r6KA99Uu6N1WULtCpC7RWvA3BC0riioyDLnIfJuvp7KLHO6VC7lc4R+Uw9DP/urJHSdD3SSGpGYOsrpVtFD2QEXLEaiqOw5NuzVMbxmhbEVpYJdlAKHvCiRdryDre4sWyg+omPoFVf2whaYr4btgy3pILjUUdAyMWD+OJQOx8paJuQSl3SAMm3U0KfKp/UBVKYSz9h3IphrACnSMIeqIkM0Yj3lKLLgebAdmM8EKJTIYWLrImFKcsX+r7EbpBmJBLk6jgA4DjDC9cZjEgLDi3dqMS+7z3YBgmJkOrSFV2PsBSiU1jmVJl9kCbZBbW5Gu5RDVCEE2huFhPIqwwOpBO2BmRmBKeTsZMGDSiT2iimIZZjW+rTx9fqXl+dZBk7FyjhQ5iuptkMYkq4MqkmFZQggAAAA=') format('woff2'),
+  url('iconfont.woff?t=1554198353958') format('woff'),
+  url('iconfont.ttf?t=1554198353958') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1554198353958#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-weixin:before {
+  content: "\e7e5";
+}
+
+.icon-shouji:before {
+  content: "\e607";
+}
+

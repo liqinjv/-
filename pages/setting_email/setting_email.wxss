@@ -1,0 +1,13 @@
+/* pages/setting_email/setting_email.wxss */
+
+.title{
+  font-size: 12px
+}
+.ding{
+  position :fixed;
+  width:90%;
+  padding:10px 20px 100px 20px ;
+  text-align: left;
+  /* border-radius:3px 400px 500px 6px */
+
+}
